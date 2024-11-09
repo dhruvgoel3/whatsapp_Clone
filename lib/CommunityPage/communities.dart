@@ -5,8 +5,9 @@ class Communities extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-      Scaffold(appBar: AppBar(
+    return Scaffold(
+      backgroundColor: Color(0xff0a131a),
+      appBar: AppBar(
         title: Text(
           "Communities",
           style: TextStyle(
@@ -21,7 +22,6 @@ class Communities extends StatelessWidget {
                 color: Colors.white,
                 size: 25,
               )),
-
           IconButton(
               onPressed: () {},
               icon: Icon(
@@ -31,12 +31,34 @@ class Communities extends StatelessWidget {
               ))
         ],
       ),
-        body: Container(
-          height: double.infinity,
-          width: double.infinity,
-          decoration: BoxDecoration(color: Color(0xff0a131a)),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(left: 15, top: 15),
+                  height: 50,
+                  width: 50,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.grey,
+                      shape: BoxShape.rectangle),
+                  child: Icon(Icons.group),
+                ),
+                Container(
+                  margin: EdgeInsets.only(left: 15, top: 20),
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'New Community',
+                    style: TextStyle(fontSize: 18, color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
-
-      );
+      ),
+    );
   }
 }
