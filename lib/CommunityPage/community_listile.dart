@@ -21,7 +21,7 @@ class CommunitiesPage extends StatelessWidget {
         title: Text(style:TextStyle(
             fontWeight: FontWeight.bold,
             fontSize:30,
-            color: Colors.white
+            color: Colors.white,
         ),textAlign: TextAlign.left,'Communities'),
         actions: [
           IconButton(onPressed: (){}, icon:Icon(Icons.qr_code_scanner),color: Colors.white),
