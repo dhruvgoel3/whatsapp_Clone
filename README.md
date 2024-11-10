@@ -1,4 +1,4 @@
-WhatsApp Clone Frontend UI------>
+# WhatsApp Clone Frontend UI------>
 This project is a basic clone of the WhatsApp app frontend UI developed using Flutter. It replicates the primary user interface elements and layout of the WhatsApp messaging app.
 
 Features:-
