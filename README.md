@@ -2,11 +2,11 @@ WhatsApp Clone Frontend UI------>
 This project is a basic clone of the WhatsApp app frontend UI developed using Flutter. It replicates the primary user interface elements and layout of the WhatsApp messaging app.
 
 Features:-
-# Chat List Screen: Displays a list of chats with contacts.
-# Chat Screen: Shows the conversation with a contact.
-# Status Screen: Displays the status updates from contacts.
-# Calls Screen: Lists recent calls and call logs.
-# Bottom Navigation Bar: For easy navigation between chats, status, and calls.
+Chat List Screen: Displays a list of chats with contacts.
+Chat Screen: Shows the conversation with a contact.
+Status Screen: Displays the status updates from contacts.
+Calls Screen: Lists recent calls and call logs.
+Bottom Navigation Bar: For easy navigation between chats, status, and calls.
 
 Here some Images are there of final Output.....
 
