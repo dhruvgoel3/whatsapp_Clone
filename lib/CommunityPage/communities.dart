@@ -11,6 +11,7 @@ class Communities extends StatelessWidget {
       'Announcements',
       'Gen AI 2024',
       'General',
+
     ];
     List<String> community1Subtitles = [
       'Come to room 145 all 1st year',

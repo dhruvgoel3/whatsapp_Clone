@@ -8,8 +8,8 @@ class Updates extends StatelessWidget {
     var scrwidth = MediaQuery.of(context).size.width;
     var scrheight = MediaQuery.of(context).size.height;
     List<String> whatsappChannelNames = [
-      'Who cares ?',
-      'TV9 Telgu',
+      'Study Notion',
+      'Telgu Space',
       'My Rising India',
       'French Modules',
       'Shivang Maths Acadmy',
@@ -20,6 +20,14 @@ class Updates extends StatelessWidget {
       'Daily Motivation',
       'Gaming Legends',
     ];
+    List<String> StatusTittles = [
+      'Broo',
+      'Vikas',
+      'Samarth',
+      'Loveraj',
+      'Krishn',
+    ];
+
     List<String> whatsappChannelSubtitles = [
       'Do or Die cases.',
       'Telgu Lessons.',
@@ -102,16 +110,22 @@ class Updates extends StatelessWidget {
                   physics: NeverScrollableScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   itemCount: images.length,
-                  itemBuilder: (context, index) => Container(
-                        decoration: BoxDecoration(
-                            border: Border.all(color: Colors.green, width: 2),
-                            shape: BoxShape.circle),
-                        margin: EdgeInsets.symmetric(horizontal: 7),
-                        child: CircleAvatar(
-                          radius: 30,
-                          backgroundImage: images[index].image,
-                        ),
-                      )),
+                  itemBuilder: (context, index) => Column(
+                    children: [
+                      Container(
+                            decoration: BoxDecoration(
+                                border: Border.all(color: Colors.green, width: 2),
+                                shape: BoxShape.circle),
+                            margin: EdgeInsets.symmetric(horizontal: 7),
+                            child: CircleAvatar(
+                              radius: 30,
+                              backgroundImage: images[index].image,
+                            ),
+                          ),
+                      SizedBox(height: 12),
+                      Text(StatusTittles[index],style: TextStyle(fontSize: 15,color: Colors.white),),
+                    ],
+                  )),
             ),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 10),
