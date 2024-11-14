@@ -67,6 +67,14 @@ class Updates extends StatelessWidget {
       Image.asset('assets/google.webp'),
       Image.asset('assets/google.webp'),
     ];
+    List<Image> statusImages = [
+      Image.asset('assets/dhruv pic.jpg'),
+      Image.asset('assets/dhruv image neww one mc d.jpg'),
+      Image.asset('assets/demo-image2.png'),
+      Image.asset('assets/doctor.png'),
+      Image.asset('assets/dhruv photo.jpg'),
+
+    ];
     return Scaffold(
       backgroundColor: Color(0xFF0B141B),
       appBar: AppBar(
@@ -111,21 +119,25 @@ class Updates extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   itemCount: images.length,
                   itemBuilder: (context, index) => Column(
-                    children: [
-                      Container(
+                        children: [
+                          Container(
                             decoration: BoxDecoration(
-                                border: Border.all(color: Colors.green, width: 2),
+                                border:
+                                    Border.all(color: Colors.green, width: 2),
                                 shape: BoxShape.circle),
                             margin: EdgeInsets.symmetric(horizontal: 7),
                             child: CircleAvatar(
                               radius: 30,
-                              backgroundImage: images[index].image,
+                              backgroundImage: statusImages[index].image,
                             ),
                           ),
-                      SizedBox(height: 12),
-                      Text(StatusTittles[index],style: TextStyle(fontSize: 15,color: Colors.white),),
-                    ],
-                  )),
+                          SizedBox(height: 12),
+                          Text(
+                            StatusTittles[index],
+                            style: TextStyle(fontSize: 15, color: Colors.white),
+                          ),
+                        ],
+                      )),
             ),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 10),

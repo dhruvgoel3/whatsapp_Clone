@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/CallPage/calls.dart';
 import 'package:whatsapp/ChatPage/listview.dart';
+import 'package:whatsapp/CommunityPage/communities.dart';
+import 'package:whatsapp/UpdatePage/updates.dart';
 
 class ChatPage extends StatelessWidget {
   ChatPage({super.key});
@@ -23,16 +26,52 @@ class ChatPage extends StatelessWidget {
                 color: Colors.white,
                 size: 25,
               )),
-          IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.more_vert,
-                color: Colors.white,
-                size: 25,
-
-              )),
-
+          Builder(
+            builder: (context) {
+              return IconButton(
+                  onPressed: () {Scaffold.of(context).openEndDrawer();},
+                  icon: Icon(
+                    Icons.more_vert,
+                    color: Colors.white,
+                    size: 25,
+                  ));
+            }
+          ),
         ],
+      ),
+
+      endDrawer: Drawer(
+        width: 250,
+        child: ListView(
+          children: [
+            ListTile(
+              title: Text("Chats"),
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => ChatPage()));
+              },
+            ),
+            ListTile(
+              title: Text("Updated"),
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => Updates()));
+              },
+            ),
+            ListTile(
+              title: Text("Community"),
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => Communities()));
+              },
+            ),
+            ListTile(
+              title: Text("Calls"),
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => Calls()));
+              },
+            ),
+
+
+          ],
+        ),
       ),
       body: Container(
         height: double.infinity,
@@ -42,33 +81,41 @@ class ChatPage extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.only(top: 5),
-              child: Container(
-                height: size.height * 0.06,
-                width: size.width * 0.923,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  color: Color(0xff272c30),
-                ),
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 10),
-                      child: CircleAvatar(
-                        backgroundImage: AssetImage("assets/Ai circle.jpg"),
-                        radius: 16,
+              child: GestureDetector(
+                onTap: () {
+                  print("Hello Subscriber");
+                },
+                onLongPress: () {
+                  print("Container is pressed for a long time");
+                },
+                child: Container(
+                  height: size.height * 0.06,
+                  width: size.width * 0.923,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    color: Color(0xff272c30),
+                  ),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10),
+                        child: CircleAvatar(
+                          backgroundImage: AssetImage("assets/Ai circle.jpg"),
+                          radius: 16,
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Text(
-                      "Ask meta AI or Search",
-                      style: TextStyle(
-                          fontSize: 18,
-                          color: Color(0xff3f4649),
-                          fontWeight: FontWeight.w500),
-                    ),
-                  ],
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Text(
+                        "Ask meta AI or Search",
+                        style: TextStyle(
+                            fontSize: 18,
+                            color: Color(0xff3f4649),
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
