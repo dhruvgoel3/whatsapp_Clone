@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/bottombar.dart';
-import 'ChatPage/chats.dart';
+import 'package:whatsapp/splash_screan.dart';
+
 
 void main() {
   runApp(const MyApp());

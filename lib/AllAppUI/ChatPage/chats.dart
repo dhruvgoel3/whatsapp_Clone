@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp/CallPage/calls.dart';
-import 'package:whatsapp/ChatPage/listview.dart';
-import 'package:whatsapp/CommunityPage/communities.dart';
-import 'package:whatsapp/UpdatePage/updates.dart';
+import 'package:whatsapp/AllAppUI/CallPage/calls.dart';
+import 'package:whatsapp/AllAppUI/ChatPage/listview.dart';
+import 'package:whatsapp/AllAppUI/ChatPage/popupbutton.dart';
+import 'package:whatsapp/AllAppUI/CommunityPage/communities.dart';
+import 'package:whatsapp/Screns/ProfileSettingsPage/profile_page.dart';
+import 'package:whatsapp/AllAppUI/UpdatePage/updates.dart';
 
 class ChatPage extends StatelessWidget {
   ChatPage({super.key});
@@ -26,53 +28,12 @@ class ChatPage extends StatelessWidget {
                 color: Colors.white,
                 size: 25,
               )),
-          Builder(
-            builder: (context) {
-              return IconButton(
-                  onPressed: () {Scaffold.of(context).openEndDrawer();},
-                  icon: Icon(
-                    Icons.more_vert,
-                    color: Colors.white,
-                    size: 25,
-                  ));
-            }
-          ),
-        ],
+
+          Popmenubuttonpage(),
+            ],
       ),
 
-      endDrawer: Drawer(
-        width: 250,
-        child: ListView(
-          children: [
-            ListTile(
-              title: Text("Chats"),
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => ChatPage()));
-              },
-            ),
-            ListTile(
-              title: Text("Updated"),
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => Updates()));
-              },
-            ),
-            ListTile(
-              title: Text("Community"),
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => Communities()));
-              },
-            ),
-            ListTile(
-              title: Text("Calls"),
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => Calls()));
-              },
-            ),
 
-
-          ],
-        ),
-      ),
       body: Container(
         height: double.infinity,
         width: double.infinity,
