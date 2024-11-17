@@ -5,6 +5,7 @@ import 'package:whatsapp/AllAppUI/ChatPage/popupbutton.dart';
 import 'package:whatsapp/AllAppUI/CommunityPage/communities.dart';
 import 'package:whatsapp/Screns/ProfileSettingsPage/profile_page.dart';
 import 'package:whatsapp/AllAppUI/UpdatePage/updates.dart';
+import 'package:whatsapp/bottombar.dart';
 
 class ChatPage extends StatelessWidget {
   ChatPage({super.key});
@@ -80,10 +81,14 @@ class ChatPage extends StatelessWidget {
                 ),
               ),
             ),
+
             Expanded(child: CloningList()),
+
+
           ],
         ),
       ),
+
     );
   }
 }

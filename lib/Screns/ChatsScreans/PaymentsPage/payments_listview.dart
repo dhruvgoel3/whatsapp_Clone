@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 
 class ChatWithBusiness {
   final String label;
-  final Image image;
+  final String imagePath;
 
-  ChatWithBusiness(this.label, this.image);
+  ChatWithBusiness(this.label, this.imagePath);
 }
 
 List<ChatWithBusiness> items = [
-  ChatWithBusiness("Maha Mumbai", Image.asset("assets/dhruv_image_neww_one_mc_d.jpg")),
-  ChatWithBusiness("Maha Mumbai", Image.asset("assets/dhruv_image_neww_one_mc_d.jpg")),
-  ChatWithBusiness("Maha Mumbai", Image.asset("assets/dhruv_image_neww_one_mc_d.jpg")),
+  ChatWithBusiness("Maha Mumbai", "assets/dhruv_image_neww_one_mc_d.jpg"),
+  ChatWithBusiness("Maha Mumbai", "assets/dhruv_image_neww_one_mc_d.jpg"),
+  ChatWithBusiness("Maha Mumbai", "assets/dhruv_image_neww_one_mc_d.jpg"),
 ];
 
 class ListViewBuilder extends StatefulWidget {
@@ -24,19 +24,26 @@ class _ListViewBuilderState extends State<ListViewBuilder> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView.builder(
-        shrinkWrap: true,
-        physics: ScrollPhysics(),
-        itemCount: items.length,
-        itemBuilder: (BuildContext context, index) {
-          return ListTile(
-            leading: CircleAvatar(
-              radius: 30,
-              backgroundImage: items[index].image.image,  // Access the actual image data
+      appBar: AppBar(title: const Text("Business Chat")),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Expanded(
+              child: ListView.builder(
+                itemCount: items.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return ListTile(
+                    leading: CircleAvatar(
+                      radius: 30,
+                      backgroundImage: AssetImage(items[index].imagePath),
+                    ),
+                    title: Text(items[index].label),
+                  );
+                },
+              ),
             ),
-            title: Text(items[index].label),
-          );
-        },
+          ],
+        ),
       ),
     );
   }

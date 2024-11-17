@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:whatsapp/AllAppUI/ChatPage/chats.dart';
+import 'package:whatsapp/bottombar.dart';
 
 class SplashScrean extends StatefulWidget {
   const SplashScrean({super.key});
@@ -19,9 +20,9 @@ class _SplashScreanState extends State<SplashScrean> {
   void initState() {
     super.initState();
 
-    Timer(Duration(seconds: 5), () {
+    Timer(Duration(seconds: 3), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => ChatPage()));
+          context, MaterialPageRoute(builder: (context) => BottomBar()));
     });
   }
 
@@ -29,8 +30,9 @@ class _SplashScreanState extends State<SplashScrean> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Color(0xff0a131a),
       body: Container(
-        color: Color(0xff20272b),
+        color: Color(0xff0a131a),
         height: size.height * 1,
         width: size.width * 1,
         child: Padding(
@@ -39,9 +41,9 @@ class _SplashScreanState extends State<SplashScrean> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.only(bottom: 50, left: 30),
+                padding: const EdgeInsets.only(bottom: 50, right: 10),
                 child: Image.asset(
-                  "assets/Whatsap symbol.png",
+                  "assets/whatsap image.png",
                   alignment: Alignment.center,
                   width: 900,
                   height: 500,
@@ -57,12 +59,11 @@ class _SplashScreanState extends State<SplashScrean> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CircleAvatar(
-                    radius: 15,
-                    backgroundColor: Color(0xff20272b),
-                    backgroundImage: AssetImage(
-                      "assets/new_image-removebg-preview.png",
+                  Image(
+                    image: AssetImage(
+                      "assets/meta_image-removebg-preview.png",
                     ),
+                    height: size.height * .02,
                   ),
                   Text(
                     " Meta ",

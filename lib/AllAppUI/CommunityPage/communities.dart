@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/Screns/ProfileSettingsPage/profile_page.dart';
 
 class Communities extends StatelessWidget {
   const Communities({super.key});
@@ -11,7 +12,6 @@ class Communities extends StatelessWidget {
       'Announcements',
       'Gen AI 2024',
       'General',
-
     ];
     List<String> community1Subtitles = [
       'Come to room 145 all 1st year',
@@ -23,7 +23,7 @@ class Communities extends StatelessWidget {
       Image.asset('assets/google.webp'),
       Image.asset('assets/google.webp'),
     ];
-    List<Image> image2= [
+    List<Image> image2 = [
       Image.asset('assets/dhruv goel resume.png'),
     ];
 
@@ -47,7 +47,10 @@ class Communities extends StatelessWidget {
       'Yummy recipes.',
     ];
     List<String> whatsappChannelNames = [
-      'Patient Studio','All the update Information', 'Hospital Staff',];
+      'Patient Studio',
+      'All the update Information',
+      'Hospital Staff',
+    ];
 
     return Scaffold(
       backgroundColor: Color(0xff0a131a),
@@ -66,13 +69,25 @@ class Communities extends StatelessWidget {
                 color: Colors.white,
                 size: 25,
               )),
-          IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.more_vert,
-                color: Colors.white,
-                size: 25,
-              ))
+          PopupMenuButton(
+            onSelected: (value) {
+              if(value == 'settings') {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => ProfilePage()));
+              }
+            },
+            color: Color(0xff0a131a),
+            itemBuilder: (BuildContext context) {
+              return [
+                PopupMenuItem(
+                  value: 'settings',
+                    child: Text(
+                  "Settings",
+                  style: TextStyle(color: Colors.white),
+                ))
+              ];
+            },
+          ),
         ],
       ),
       body: SingleChildScrollView(

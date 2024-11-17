@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/Screns/UpdateScreans/create_channel_page.dart';
+import 'package:whatsapp/Screns/UpdateScreans/status_privacy_page.dart';
+import 'package:whatsapp/Screns/ProfileSettingsPage/profile_page.dart';
 
 class Updates extends StatelessWidget {
   const Updates({super.key});
@@ -73,7 +76,6 @@ class Updates extends StatelessWidget {
       Image.asset('assets/demo-image2.png'),
       Image.asset('assets/doctor.png'),
       Image.asset('assets/dhruv photo.jpg'),
-
     ];
     return Scaffold(
       backgroundColor: Color(0xFF0B141B),
@@ -91,10 +93,43 @@ class Updates extends StatelessWidget {
               color: Colors.white),
           IconButton(
               onPressed: () {}, icon: Icon(Icons.search), color: Colors.white),
-          IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.more_vert),
-              color: Colors.white)
+          PopupMenuButton(
+            onSelected: (value) {
+              if (value == 'status_privacy') {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const StatusPrivacyPage()));
+              } else if (value == 'create_channel') {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const CreateChannelPage()));
+              } else if (value == 'settings') {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const ProfilePage()));
+              }
+            },
+            color: Color(0xff0a131a),
+            itemBuilder: (BuildContext context) {
+              return [
+                PopupMenuItem(
+                    value: 'status_privacy',
+                    child: Text(
+                      "Status privacy",
+                      style: TextStyle(color: Colors.white),
+                    )),
+                PopupMenuItem(
+                    value: 'create_channel',
+                    child: Text(
+                      "Create channel",
+                      style: TextStyle(color: Colors.white),
+                    )),
+                PopupMenuItem(
+                    value: 'settings',
+                    child: Text(
+                      "Settings",
+                      style: TextStyle(color: Colors.white),
+                    ))
+              ];
+            },
+          )
         ],
       ),
       body: SingleChildScrollView(

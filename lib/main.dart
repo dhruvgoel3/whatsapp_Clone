@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: "Whatsapp Clone",
       debugShowCheckedModeBanner: false,
-      home: BottomBar(),
+      home: SplashScrean(),
     );
+
   }
 }
