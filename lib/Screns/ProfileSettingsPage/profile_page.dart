@@ -32,6 +32,7 @@ class _ProfilePageState extends State<ProfilePage> {
           style: TextStyle(fontWeight: FontWeight.w500, color: Colors.white),
         ),
         actions: [
+          SizedBox(height: 5,),
           Padding(
             padding: const EdgeInsets.only(right: 15),
             child: Icon(Icons.search, color: Colors.white),

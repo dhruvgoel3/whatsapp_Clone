@@ -58,32 +58,37 @@ class Updates extends StatelessWidget {
       '08:45 PM',
     ];
     List<Image> images = [
-      Image.asset('assets/google.webp'),
-      Image.asset('assets/google.webp'),
-      Image.asset('assets/google.webp'),
-      Image.asset('assets/google.webp'),
-      Image.asset('assets/google.webp'),
-      Image.asset('assets/google.webp'),
-      Image.asset('assets/google.webp'),
-      Image.asset('assets/google.webp'),
-      Image.asset('assets/google.webp'),
-      Image.asset('assets/google.webp'),
-      Image.asset('assets/google.webp'),
+      Image.asset('assets/1.jpg'),
+      Image.asset('assets/2.jpg'),
+      Image.asset('assets/3.jpg'),
+      Image.asset('assets/4.jpg'),
+      Image.asset('assets/5.jpg'),
+      Image.asset('assets/1.jpg'),
+      Image.asset('assets/2.jpg'),
+      Image.asset('assets/3.jpg'),
+      Image.asset('assets/4.jpg'),
+      Image.asset('assets/5.jpg'),
+      Image.asset('assets/5.jpg'),
     ];
     List<Image> statusImages = [
       Image.asset('assets/dhruv pic.jpg'),
       Image.asset('assets/dhruv image neww one mc d.jpg'),
-      Image.asset('assets/demo-image2.png'),
-      Image.asset('assets/doctor.png'),
+      Image.asset('assets/dhruv.jpg.jpg'),
+      Image.asset('assets/harsh-removebg-preview[1].png'),
       Image.asset('assets/dhruv photo.jpg'),
     ];
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.green,
+        onPressed: () {},
+        child: Icon(Icons.camera_alt_sharp),
+      ),
       backgroundColor: Color(0xFF0B141B),
       appBar: AppBar(
         backgroundColor: Color(0xFF0B141B),
         title: Text(
             style: TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 30, color: Colors.white),
+                fontWeight: FontWeight.w400, fontSize: 27, color: Colors.white),
             textAlign: TextAlign.left,
             'Updates'),
         actions: [
@@ -140,19 +145,25 @@ class Updates extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: Container(
                 margin: EdgeInsets.only(top: 20),
-                child: Text(
-                  'Status',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 12),
+                  child: Text(
+                    'Status',
+                    style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500),
+                  ),
                 ),
               ),
             ),
             SizedBox(
-              height: 130,
+              height: 100,
               child: ListView.builder(
                   shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: ScrollPhysics(),
                   scrollDirection: Axis.horizontal,
-                  itemCount: images.length,
+                  itemCount: statusImages.length,
                   itemBuilder: (context, index) => Column(
                         children: [
                           Container(
@@ -174,13 +185,22 @@ class Updates extends StatelessWidget {
                         ],
                       )),
             ),
+            Divider(
+              color: Colors.white12,
+            ),
+            SizedBox(
+              height: 10,
+            ),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 10),
               child: Row(
                 children: [
                   Text(
                     'Channels',
-                    style: TextStyle(fontSize: 20, color: Colors.white),
+                    style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w400),
                   ),
                   SizedBox(
                     width: scrwidth * .55,
@@ -197,6 +217,7 @@ class Updates extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(height: 10),
             SizedBox(
               child: ListView.builder(
                   shrinkWrap: true,
@@ -232,7 +253,97 @@ class Updates extends StatelessWidget {
                           style: TextStyle(color: Colors.grey, fontSize: 13),
                         ),
                       )),
-            )
+            ),
+            SizedBox(height: 13),
+            Padding(
+              padding: const EdgeInsets.only(right: 200),
+              child: Text(
+                "Find channels to follow",
+                style: TextStyle(
+                    color: Colors.white54, fontWeight: FontWeight.w600),
+              ),
+            ),
+            SizedBox(height: 10),
+            ListTile(
+                leading: CircleAvatar(
+                  radius: 20,
+                  backgroundColor: Colors.black,
+                  backgroundImage: AssetImage(
+                    "assets/meta_image-removebg-preview.png",
+                  ),
+                ),
+                title: Text(
+                  "Meta",
+                  style: TextStyle(color: Colors.white, fontSize: 17),
+                ),
+                subtitle: Text(
+                  "6.2M followers",
+                  style: TextStyle(color: Colors.white54),
+                ),
+                trailing: ElevatedButton(
+                  onPressed: () {},
+                  child: Text("Follow",style: TextStyle(color: Colors.white),),
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.green,),
+                )),
+            ListTile(
+                leading: CircleAvatar(
+                  radius: 20,
+                  backgroundColor: Colors.black,
+                  backgroundImage: AssetImage(
+                    "assets/under construction image.jpg",
+                  ),
+                ),
+                title: Text(
+                  "Constructions",
+                  style: TextStyle(color: Colors.white, fontSize: 17),
+                ),
+                subtitle: Text(
+                  "1.1M followers",
+                  style: TextStyle(color: Colors.white54),
+                ),
+                trailing: ElevatedButton(
+                  onPressed: () {},
+                  child: Text("Follow",style: TextStyle(color: Colors.white),),
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.green,),
+                )),
+            ListTile(
+                leading: CircleAvatar(
+                  radius: 20,
+                  backgroundColor: Colors.black,
+                  backgroundImage: AssetImage(
+                    "assets/2.jpg",
+                  ),
+                ),
+                title: Text(
+                  "Neha mam army",
+                  style: TextStyle(color: Colors.white, fontSize: 17),
+                ),
+                subtitle: Text(
+                  "3.2M followers",
+                  style: TextStyle(color: Colors.white54),
+                ),
+                trailing: ElevatedButton(
+                  onPressed: () {},
+                  child: Text("Follow",style: TextStyle(color: Colors.white),),
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.green,),
+                )),
+            SizedBox(height: 15,),
+            Padding(
+              padding: const EdgeInsets.only(right: 200.0),
+              child: Container(
+                width: 140,
+                height: 40,
+                decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(color: Colors.white54)),
+                child: Center(
+                    child: Text(
+                  "Explore more",
+                  style: TextStyle(color: Colors.green),
+                )),
+              ),
+            ),
           ],
         ),
       ),

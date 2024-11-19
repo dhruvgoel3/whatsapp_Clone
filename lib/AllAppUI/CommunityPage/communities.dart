@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:whatsapp/Screns/ProfileSettingsPage/profile_page.dart';
 
@@ -9,7 +10,7 @@ class Communities extends StatelessWidget {
     var size = MediaQuery.of(context).size;
 
     List<String> community1 = [
-      'Announcements',
+      'App mentoring',
       'Gen AI 2024',
       'General',
     ];
@@ -20,8 +21,13 @@ class Communities extends StatelessWidget {
     ];
     List<Image> images = [
       Image.asset('assets/google.webp'),
-      Image.asset('assets/google.webp'),
-      Image.asset('assets/google.webp'),
+      Image.asset('assets/images.png'),
+      Image.asset('assets/under construction image.jpg'),
+    ];
+    List<Image> images2 = [
+      Image.asset('assets/demo-image2.png'),
+      Image.asset('assets/dhruv goel resume.png'),
+      Image.asset('assets/whatsap image.png'),
     ];
     List<Image> image2 = [
       Image.asset('assets/dhruv goel resume.png'),
@@ -71,7 +77,7 @@ class Communities extends StatelessWidget {
               )),
           PopupMenuButton(
             onSelected: (value) {
-              if(value == 'settings') {
+              if (value == 'settings') {
                 Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => ProfilePage()));
               }
@@ -80,11 +86,11 @@ class Communities extends StatelessWidget {
             itemBuilder: (BuildContext context) {
               return [
                 PopupMenuItem(
-                  value: 'settings',
+                    value: 'settings',
                     child: Text(
-                  "Settings",
-                  style: TextStyle(color: Colors.white),
-                ))
+                      "Settings",
+                      style: TextStyle(color: Colors.white),
+                    ))
               ];
             },
           ),
@@ -118,29 +124,64 @@ class Communities extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(height: 5),
             Divider(thickness: 10, color: Colors.black),
-            Container(
-              margin: EdgeInsets.only(left: 15, top: 15),
-              child: Row(
-                children: [
-                  CircleAvatar(
-                    radius: 27,
-                    backgroundImage: AssetImage('assets/google.webp'),
-                  ),
-                  Container(
-                      alignment: Alignment.centerLeft,
-                      margin: EdgeInsets.only(left: 15, top: 5),
-                      child: Text(
-                        'GDG Volunteers 2024',
-                        style: TextStyle(color: Colors.white, fontSize: 18),
-                      ))
-                ],
+            ListTile(
+              leading: Container(
+                height: 47,
+                width: 47,
+                child: Image.asset(
+                  "assets/images.png",
+                  fit: BoxFit.cover,
+                  height: 47,
+                  width: 47,
+                ),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(40),
+                    color: Colors.black),
+              ),
+              title: Text(
+                "GDG-Volunteers 2024",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500),
               ),
             ),
-            Container(
-              margin: EdgeInsets.only(top: 5),
-              height: 0.3,
-              decoration: BoxDecoration(color: Colors.grey),
+            SizedBox(
+              height: 8,
+            ),
+            Divider(
+              color: Colors.white12,
+            ),
+            ListTile(
+              leading: Container(
+                height: 43,
+                width: 43,
+                child: Icon(
+                  CupertinoIcons.volume_up,
+                  color: Colors.white,
+                ),
+                decoration: BoxDecoration(
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.circular(10),
+                    color: Color(0xff1A3A2D)),
+              ),
+              title: Text(
+                "Announcements",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 17,
+                    fontWeight: FontWeight.w500),
+              ),
+              subtitle: Text(
+                "~ Bajrang Gour:1st year join",
+                style: TextStyle(color: Colors.white54),
+              ),
+              trailing: Text(
+                "13/11/24",
+                style: TextStyle(color: Colors.white54),
+              ),
             ),
             SizedBox(
               child: ListView.builder(
@@ -184,29 +225,30 @@ class Communities extends StatelessWidget {
               ),
             ),
             Divider(thickness: 10, color: Colors.black),
-            Container(
-              margin: EdgeInsets.only(left: 15, top: 20),
-              child: Row(
-                children: [
-                  CircleAvatar(
-                    radius: 27,
-                    backgroundImage: AssetImage('assets/doctor.png'),
-                  ),
-                  Container(
-                      alignment: Alignment.centerLeft,
-                      margin: EdgeInsets.only(left: 15, top: 5),
-                      child: Text(
-                        'Fortis Community',
-                        style: TextStyle(color: Colors.white, fontSize: 18),
-                      ))
-                ],
+            ListTile(
+              leading: Container(
+                height: 47,
+                width: 47,
+                child: Image.asset(
+                  "assets/5.jpg",
+                  fit: BoxFit.cover,
+                  height: 47,
+                  width: 47,
+                ),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(40),
+                    color: Colors.black),
+              ),
+              title: Text(
+                "TechXNinjas 2",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500),
               ),
             ),
-            Container(
-              margin: EdgeInsets.only(top: 5),
-              height: 0.3,
-              decoration: BoxDecoration(color: Colors.grey),
-            ),
+        SizedBox(height: 6),
+        Divider(color: Colors.white12,),
             SizedBox(
               child: ListView.builder(
                   shrinkWrap: true,
@@ -217,7 +259,7 @@ class Communities extends StatelessWidget {
                           style: TextStyle(color: Colors.white),
                         ),
                         leading: CircleAvatar(
-                          backgroundImage: images[index].image,
+                          backgroundImage: images2[index].image,
                         ),
                         trailing: Text(
                           times[index],

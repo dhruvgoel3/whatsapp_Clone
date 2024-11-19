@@ -11,6 +11,8 @@ class _CallListviewState extends State<CallListview> {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      shrinkWrap: true,
+
       children: [
         CallListile("assets/dhruv image neww one mc d.jpg", "Team Hommies", "Today,8:05 am", Icons.call_received, Icons.videocam_outlined),
         CallListile("assets/dhruv image neww one mc d.jpg", "Aayush Canada", "Yesterday,9:18 pm", Icons.call_made, Icons.call),

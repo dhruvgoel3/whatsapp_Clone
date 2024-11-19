@@ -21,7 +21,7 @@ class _ProfilelistviewPageState extends State<ProfilelistviewPage> {
           child: ListTile(
             leading:  Icon(
               Options[index].icon,
-              color: Colors.white54,size: 25  ,
+              color: Colors.white54,size: 23  ,
             ),
 
             title: Padding(
@@ -34,7 +34,7 @@ class _ProfilelistviewPageState extends State<ProfilelistviewPage> {
             ),
             subtitle: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: Text(Options[index].text,style: TextStyle(fontSize: 15,color: Colors.white54),),
+              child: Text(Options[index].text,style: TextStyle(fontSize: 14,color: Colors.white54),),
             ),
 
           ),

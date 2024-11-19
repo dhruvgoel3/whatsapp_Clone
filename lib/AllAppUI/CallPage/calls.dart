@@ -12,6 +12,7 @@ class Calls extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xff0a131a),
       appBar: AppBar(
         title: Text(
           "Calls",
@@ -64,12 +65,68 @@ class Calls extends StatelessWidget {
           ),
         ],
       ),
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        decoration: BoxDecoration(color: Color(0xff0a131a)),
-        child: Expanded(child: CallListview()),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 15, right: 20, top: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Favourites",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 15),
+                  ),
+                  Text(
+                    "More",
+                    style: TextStyle(
+                        color: Colors.green, fontWeight: FontWeight.w600),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 18),
+            ListTile(
+              leading: Container(
+                height: 45,
+                width: 45,
+                decoration:
+                    BoxDecoration(color: Colors.white54, shape: BoxShape.circle),
+                child: Icon(
+                  Icons.people_alt,
+                  color: Colors.white,
+                ),
+              ),
+              title: Text(
+                "Group",
+                style: TextStyle(color: Colors.white),
+              ),
+              trailing: Icon(
+                Icons.info_outline,
+                color: Colors.white,
+                size: 25,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 310, top: 15),
+              child: Text(
+                "Recent",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 15),
+              ),
+            ),
+            CallListview(),
+          ],
+        
+        ),
       ),
+
+      // child: Expanded(child: CallListview()),
     );
   }
 }
