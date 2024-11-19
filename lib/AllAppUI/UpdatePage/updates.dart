@@ -103,9 +103,6 @@ class Updates extends StatelessWidget {
               if (value == 'status_privacy') {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => const StatusPrivacyPage()));
-              } else if (value == 'create_channel') {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const CreateChannelPage()));
               } else if (value == 'settings') {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => const ProfilePage()));
@@ -121,6 +118,9 @@ class Updates extends StatelessWidget {
                       style: TextStyle(color: Colors.white),
                     )),
                 PopupMenuItem(
+                    onTap: () {
+                      _showBottomSheet(context);
+                    },
                     value: 'create_channel',
                     child: Text(
                       "Create channel",
@@ -282,8 +282,13 @@ class Updates extends StatelessWidget {
                 ),
                 trailing: ElevatedButton(
                   onPressed: () {},
-                  child: Text("Follow",style: TextStyle(color: Colors.white),),
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.green,),
+                  child: Text(
+                    "Follow",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green,
+                  ),
                 )),
             ListTile(
                 leading: CircleAvatar(
@@ -303,8 +308,13 @@ class Updates extends StatelessWidget {
                 ),
                 trailing: ElevatedButton(
                   onPressed: () {},
-                  child: Text("Follow",style: TextStyle(color: Colors.white),),
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.green,),
+                  child: Text(
+                    "Follow",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green,
+                  ),
                 )),
             ListTile(
                 leading: CircleAvatar(
@@ -324,10 +334,17 @@ class Updates extends StatelessWidget {
                 ),
                 trailing: ElevatedButton(
                   onPressed: () {},
-                  child: Text("Follow",style: TextStyle(color: Colors.white),),
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.green,),
+                  child: Text(
+                    "Follow",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green,
+                  ),
                 )),
-            SizedBox(height: 15,),
+            SizedBox(
+              height: 15,
+            ),
             Padding(
               padding: const EdgeInsets.only(right: 200.0),
               child: Container(
@@ -349,4 +366,15 @@ class Updates extends StatelessWidget {
       ),
     );
   }
+}
+
+void _showBottomSheet(BuildContext context) {
+  var size = MediaQuery.of(context).size;
+  showModalBottomSheet(
+    backgroundColor: Color(0xff0a131a),
+    context: context,
+    builder: (context) {
+      return Container(height: size.height * .99, child: CreateChannelpage());
+    },
+  );
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/Screns/ChatsScreans/linked_devices.dart';
-import 'package:whatsapp/Screns/ChatsScreans/new_broadcast.dart';
+import 'package:whatsapp/Screns/ChatsScreans/NewBroadcastPage/new_broadcast.dart';
 import 'package:whatsapp/Screns/ChatsScreans/Newgroup_page/new_group.dart';
 import 'package:whatsapp/Screns/ChatsScreans/PaymentsPage/payments.dart';
 import 'package:whatsapp/Screns/ChatsScreans/starred_messages.dart';

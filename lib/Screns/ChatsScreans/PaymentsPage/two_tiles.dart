@@ -58,7 +58,7 @@ class _TwoTilesState extends State<TwoTiles> {
                 color: Colors.green, fontSize: 15, fontWeight: FontWeight.w800),
           ),
         ),
-       ListViewBuilder(),
+       CloningList(),
       ],
     );
 

@@ -1,40 +1,29 @@
 import 'package:flutter/material.dart';
-class NewGroupListview
-{
-  final String Tittle,SubTittle;
-  final Image image;
 
-  NewGroupListview(this.Tittle,this.SubTittle,this.image);
-}
-
-List Items = [
-  NewGroupListview('Abhisjek Jmit','Jai shree ram',Image.asset("assets/dhruv image neww one mc d.jpg")),
-  NewGroupListview('Abhisjek Jmit','Jai shree ram',Image.asset("assets/dhruv image neww one mc d.jpg")),
-  NewGroupListview('Abhisjek Jmit','Jai shree ram',Image.asset("assets/dhruv image neww one mc d.jpg")),
-  NewGroupListview('Abhisjek Jmit','Jai shree ram',Image.asset("assets/dhruv image neww one mc d.jpg")),
-];
-
-
-class RealListViewOne extends StatefulWidget {
-  const RealListViewOne({super.key});
-
-  @override
-  State<RealListViewOne> createState() => _RealListViewOneState();
-}
-
-class _RealListViewOneState extends State<RealListViewOne> {
+class ContactListtile extends StatelessWidget {
+  final String image, label, label2;
+  const ContactListtile(
+    this.image,
+    this.label,
+    this.label2,
+  );
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      physics: ScrollPhysics(),
-      itemCount: Items.length,
-      shrinkWrap: true,
-      itemBuilder: (BuildContext context , int index) {
-        ListTile(
-
-        );
-      },
+    var size = MediaQuery.of(context).size;
+    return ListTile(
+      leading: CircleAvatar(
+        backgroundImage: AssetImage(image),
+        radius: 23,
+      ),
+      title: Text(
+        label,
+        style: TextStyle(
+            fontSize: 16, fontWeight: FontWeight.w400, color: Colors.white),
+      ),
+      subtitle: Text(
+        label2,
+        style: TextStyle(fontSize: 15, color: Colors.white30),
+      ),
     );
   }
 }
-

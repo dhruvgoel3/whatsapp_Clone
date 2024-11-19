@@ -11,7 +11,7 @@ class Cloning extends StatelessWidget {
    var size = MediaQuery.of(context).size;
     return ListTile(
      leading: CircleAvatar(backgroundImage: AssetImage(image),radius: 25,),
-      title: Text(label,style: TextStyle(fontSize: 16,fontWeight: FontWeight.w800,color: Colors.white),),
+      title: Text(label,style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color: Colors.white),),
       subtitle: Row(
         children: [
           Icon(iconData,size: 22,color: Colors.lightBlueAccent),

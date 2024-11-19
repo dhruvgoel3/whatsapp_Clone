@@ -64,7 +64,7 @@ class Communities extends StatelessWidget {
         title: Text(
           "Communities",
           style: TextStyle(
-              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 25),
+              color: Colors.white, fontWeight: FontWeight.w400, fontSize: 25),
         ),
         backgroundColor: Color(0xff0a131a),
         actions: [
@@ -103,15 +103,38 @@ class Communities extends StatelessWidget {
               margin: EdgeInsets.only(bottom: 15),
               child: Row(
                 children: [
-                  Container(
-                    margin: EdgeInsets.only(left: 15, top: 15),
-                    height: 50,
-                    width: 50,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.grey,
-                        shape: BoxShape.rectangle),
-                    child: Icon(Icons.group),
+                  Stack(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(left: 15, top: 15),
+                        height: size.height * .065,
+                        width: size.height * .065,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.grey,
+                            shape: BoxShape.rectangle),
+                        child: Icon(
+                          Icons.group,
+                          size: 30,
+                        ),
+                      ),
+                      Positioned(
+                        bottom: -14,
+                        right: 0,
+
+                        child: Container(
+                          width: size.width * .06,
+                          height: size.height * .06,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle, color: Colors.green),
+                          child: Center(
+                              child: Icon(
+                                Icons.add,
+                                size: 18,
+                              )),
+                        ),
+                      )
+                    ],
                   ),
                   Container(
                     margin: EdgeInsets.only(left: 15, top: 20),
@@ -128,8 +151,8 @@ class Communities extends StatelessWidget {
             Divider(thickness: 10, color: Colors.black),
             ListTile(
               leading: Container(
-                height: 47,
-                width: 47,
+                height: 45,
+                width: 45,
                 child: Image.asset(
                   "assets/images.png",
                   fit: BoxFit.cover,
@@ -227,8 +250,8 @@ class Communities extends StatelessWidget {
             Divider(thickness: 10, color: Colors.black),
             ListTile(
               leading: Container(
-                height: 47,
-                width: 47,
+                height: 45,
+                width: 45,
                 child: Image.asset(
                   "assets/5.jpg",
                   fit: BoxFit.cover,
@@ -249,6 +272,35 @@ class Communities extends StatelessWidget {
             ),
         SizedBox(height: 6),
         Divider(color: Colors.white12,),
+            ListTile(
+              leading: Container(
+                height: 43,
+                width: 43,
+                child: Icon(
+                  CupertinoIcons.volume_up,
+                  color: Colors.white,
+                ),
+                decoration: BoxDecoration(
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.circular(10),
+                    color: Color(0xff1A3A2D)),
+              ),
+              title: Text(
+                "Announcements",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 17,
+                    fontWeight: FontWeight.w500),
+              ),
+              subtitle: Text(
+                "Welcome to the tech world",
+                style: TextStyle(color: Colors.white54),
+              ),
+              trailing: Text(
+                "13/11/24",
+                style: TextStyle(color: Colors.white54),
+              ),
+            ),
             SizedBox(
               child: ListView.builder(
                   shrinkWrap: true,

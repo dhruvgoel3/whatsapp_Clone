@@ -17,7 +17,7 @@ class Calls extends StatelessWidget {
         title: Text(
           "Calls",
           style: TextStyle(
-              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 25),
+              color: Colors.white, fontWeight: FontWeight.w400, fontSize: 25),
         ),
         backgroundColor: Color(0xff0a131a),
         actions: [
