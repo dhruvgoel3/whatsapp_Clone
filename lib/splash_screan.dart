@@ -13,9 +13,7 @@ class SplashScrean extends StatefulWidget {
 
 class _SplashScreanState extends State<SplashScrean> {
   @override
-  // Here we are using this method to apply duration for a page..
-  // Init means initialisation , so when this method
-  // initialize then this initial function will be called
+
 
   void initState() {
     super.initState();
