@@ -3,6 +3,7 @@ import 'package:whatsapp/AllAppUI/CallPage/call_listview.dart';
 import 'package:whatsapp/Screns/CallScreans/call_log.dart';
 import 'package:whatsapp/Screns/ProfileSettingsPage/profile_page.dart';
 import 'package:whatsapp/bottombar.dart';
+import 'package:get/get.dart';
 
 import 'call_listile.dart';
 
@@ -38,8 +39,14 @@ class Calls extends StatelessWidget {
           PopupMenuButton(
             onSelected: (value) {
               if (value == 'call_log') {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const CallLog()));
+               Get.defaultDialog(
+                 title: 'Do you want to clear your entire call log ?',
+                 textCancel: 'Cancel',
+                 textConfirm: 'ok',
+
+
+
+               );
               } else if (value == 'settings') {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => const ProfilePage()));
