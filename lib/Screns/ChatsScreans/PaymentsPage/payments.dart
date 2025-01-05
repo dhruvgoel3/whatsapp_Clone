@@ -105,7 +105,9 @@ class _PaymentsState extends State<Payments> {
                     )
                   ],
                 ),
-                SizedBox(width: 20,),
+                SizedBox(
+                  width: 20,
+                ),
                 Column(
                   children: [
                     CircleAvatar(
@@ -116,10 +118,11 @@ class _PaymentsState extends State<Payments> {
                       "PM modi",
                       style: TextStyle(color: Colors.white),
                     ),
-
                   ],
                 ),
-                SizedBox(width: 15,),
+                SizedBox(
+                  width: 15,
+                ),
                 Column(
                   children: [
                     CircleAvatar(
@@ -136,7 +139,9 @@ class _PaymentsState extends State<Payments> {
                     )
                   ],
                 ),
-                SizedBox(width: 15,),
+                SizedBox(
+                  width: 15,
+                ),
                 Column(
                   children: [
                     CircleAvatar(
@@ -153,7 +158,9 @@ class _PaymentsState extends State<Payments> {
                     )
                   ],
                 ),
-                SizedBox(width: 15,),
+                SizedBox(
+                  width: 15,
+                ),
                 Column(
                   children: [
                     CircleAvatar(
@@ -164,16 +171,17 @@ class _PaymentsState extends State<Payments> {
                       "RCB",
                       style: TextStyle(color: Colors.white),
                     ),
-
                   ],
                 ),
-
               ],
             ),
           ),
-          Divider(thickness: 10,color: Colors.black,),
+          Divider(
+            thickness: 10,
+            color: Colors.black,
+          ),
           Padding(
-            padding: const EdgeInsets.only(top:5,right: 225),
+            padding: const EdgeInsets.only(top: 5, right: 225),
             child: Text(
               "Payment methods",
               style: TextStyle(
@@ -182,42 +190,127 @@ class _PaymentsState extends State<Payments> {
                   fontWeight: FontWeight.w800),
             ),
           ),
-          SizedBox(height: 10,),
+          SizedBox(
+            height: 10,
+          ),
           Container(
             height: 78,
             width: 360,
-            decoration: BoxDecoration(color: Colors.white10,borderRadius: BorderRadius.circular(15)),
+            decoration: BoxDecoration(
+                color: Colors.white10, borderRadius: BorderRadius.circular(15)),
             child: Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 6,bottom: 25),
-                  child: Icon(CupertinoIcons.lock_shield,color: Colors.green,size: 33,),
-
+                  padding: const EdgeInsets.only(left: 6, bottom: 25),
+                  child: Icon(
+                    CupertinoIcons.lock_shield,
+                    color: Colors.green,
+                    size: 33,
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 8.0),
                   child: Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(top: 8.0,right: 23),
-                        child: Text("To protect your security , Whatsap does",style: TextStyle(color: Colors.white),),
+                        padding: const EdgeInsets.only(top: 8.0, right: 23),
+                        child: Text(
+                          "To protect your security , Whatsap does",
+                          style: TextStyle(color: Colors.white, fontSize: 14),
+                        ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(),
-                        child: Text("not secure your UPI PIN or full bank account",style: TextStyle(color: Colors.white),),
+                        child: Text(
+                          "not secure your UPI PIN or full bank account",
+                          style: TextStyle(color: Colors.white, fontSize: 14),
+                        ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(right: 235),
-                        child: Text("number",style: TextStyle(color: Colors.white),),
+                        child: Text(
+                          "number",
+                          style: TextStyle(color: Colors.white, fontSize: 14),
+                        ),
                       )
                     ],
                   ),
                 ),
-
-
               ],
             ),
-          )
+          ),
+          SizedBox(
+            height: 13,
+          ),
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 13.0),
+                child: Icon(
+                  Icons.add_circle_outline,
+                  color: Colors.grey,
+                  size: 26,
+                ),
+              ),
+              SizedBox(
+                width: 23,
+              ),
+              Text("Add payment Method",
+                  style: TextStyle(color: Colors.white, fontSize: 16)),
+              SizedBox(
+                height: 6,
+              ),
+            ],
+          ),
+          Divider(
+            thickness: 10,
+            color: Colors.black,
+          ),
+          SizedBox(
+            height: 6,
+          ),
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 13.0),
+                child: Icon(
+                  Icons.help,
+                  color: Colors.grey,
+                  size: 26,
+                ),
+              ),
+              SizedBox(
+                width: 23,
+              ),
+              Text("Help", style: TextStyle(color: Colors.white, fontSize: 16)),
+            ],
+          ),
+          SizedBox(
+            height: 6,
+          ),
+          Divider(
+            thickness: 10,
+            color: Colors.black,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 5.0),
+            child: Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 13.0),
+                  child: Icon(
+                    Icons.delete,
+                    color: Colors.white,
+                    size: 26,
+                  ),
+                ),
+                SizedBox(
+                  width: 23,
+                ),
+                Text("Remove payments imformation", style: TextStyle(color: Colors.grey, fontSize: 16)),
+              ],
+            ),
+          ),
         ],
       ),
     );
