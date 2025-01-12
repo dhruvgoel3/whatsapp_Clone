@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:whatsapp/AllAppUI/ChatPage/chats.dart';
+import 'package:whatsapp/Authentication/agree&continue_screan.dart';
 import 'package:whatsapp/bottombar.dart';
 
 class SplashScrean extends StatefulWidget {
@@ -20,7 +21,7 @@ class _SplashScreanState extends State<SplashScrean> {
 
     Timer(Duration(seconds: 3), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => BottomBar()));
+          context, MaterialPageRoute(builder: (context) => AgreeAndContinue()));
     });
   }
 
