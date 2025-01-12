@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:whatsapp/Widgets/round_button.dart';
 import 'package:whatsapp/bottombar.dart';
@@ -5,9 +6,19 @@ import 'package:whatsapp/bottombar.dart';
 import '../Widgets/helper.dart';
 import 'otp_screan.dart';
 
-class OtpScrean extends StatelessWidget {
+class OtpScrean extends StatefulWidget {
   final String phonenumber;
   OtpScrean({super.key, required this.phonenumber});
+
+  @override
+  State<OtpScrean> createState() => _OtpScreanState();
+}
+
+class _OtpScreanState extends State<OtpScrean> {
+  bool loading = false;
+
+  final auth = FirebaseAuth.instance;
+
   TextEditingController otp1Controller = TextEditingController();
   TextEditingController otp2Controller = TextEditingController();
   TextEditingController otp3Controller = TextEditingController();
@@ -34,7 +45,8 @@ class OtpScrean extends StatelessWidget {
               height: 30,
             ),
             UiHelper.CustomText(
-                text: "You've tried to register +91${phonenumber}", height: 15),
+                text: "You've tried to register +91${widget.phonenumber}",
+                height: 15),
             UiHelper.CustomText(
                 text: "recently. Wait before requesting an sms or a call",
                 height: 15),
@@ -89,12 +101,25 @@ class OtpScrean extends StatelessWidget {
                 text: "Didn’t receive code?",
                 height: 14,
                 color: const Color(0XFF00A884)),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             RoundButton(
                 title: 'Next',
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => BottomBar()));
+                onTap: () async {
+                  final authCredential = PhoneAuthProvider.credential(
+                      verificationId: widget.phonenumber,
+                      smsCode: otp1Controller.text.toString() +
+                          otp2Controller.text.toString() +
+                          otp3Controller.text.toString() +
+                          otp4Controller.text.toString() +
+                          otp5Controller.text.toString() +
+                          otp6Controller.text.toString());
+                  try {
+                    await auth.signInWithCredential(authCredential);
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => BottomBar()));
+                  } catch (e) {}
                 })
           ],
         ),

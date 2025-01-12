@@ -1,6 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:whatsapp/Authentication/otp_screan.dart';
 import 'package:whatsapp/Widgets/round_button.dart';
+
+import '../utils/utils.dart';
 
 class EnterPhoneNumber extends StatefulWidget {
   const EnterPhoneNumber({super.key});
@@ -10,6 +13,8 @@ class EnterPhoneNumber extends StatefulWidget {
 }
 
 class _EnterPhoneNumberState extends State<EnterPhoneNumber> {
+  final auth = FirebaseAuth.instance;
+  bool loading = false;
   TextEditingController phoneController = TextEditingController();
   String selectedCountry = "India";
   List<String> countries = ["India", "USA", "UK", "Canada"];
@@ -113,10 +118,39 @@ class _EnterPhoneNumberState extends State<EnterPhoneNumber> {
                 )
               ],
             ),
-            SizedBox(height: 40,),
-            RoundButton(title: "next", onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>OtpScrean(phonenumber: '',)));
-            })
+            SizedBox(
+              height: 40,
+            ),
+            RoundButton(
+                title: "next",
+                onTap: () {
+                  setState(() {
+                    loading = false;
+                  });
+                  auth.verifyPhoneNumber(
+                      verificationCompleted: (_) {},
+                      verificationFailed: (e) {
+                        setState(() {
+                          loading = false;
+                        });
+                      },
+                      codeSent: (String verificationId, int? Token) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    OtpScrean(phonenumber: verificationId)));
+                        setState(() {
+                          loading = false;
+                        });
+                      },
+                      codeAutoRetrievalTimeout: (e) {
+                        Utils().toastMessage(e.toString());
+                        setState(() {
+                          loading = false;
+                        });
+                      });
+                })
           ],
         ),
       ),
