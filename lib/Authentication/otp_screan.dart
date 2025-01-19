@@ -107,7 +107,7 @@ class _OtpScreanState extends State<OtpScrean> {
             RoundButton(
                 title: 'Next',
                 onTap: ()  {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>BottomBar()));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>BottomBar()));
                 })
           ],
         ),
