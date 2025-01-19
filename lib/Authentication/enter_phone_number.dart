@@ -124,32 +124,35 @@ class _EnterPhoneNumberState extends State<EnterPhoneNumber> {
             RoundButton(
                 title: "next",
                 onTap: () {
-                  setState(() {
-                    loading = false;
-                  });
-                  auth.verifyPhoneNumber(
-                      verificationCompleted: (_) {},
-                      verificationFailed: (e) {
-                        setState(() {
-                          loading = false;
-                        });
-                      },
-                      codeSent: (String verificationId, int? Token) {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    OtpScrean(phonenumber: verificationId)));
-                        setState(() {
-                          loading = false;
-                        });
-                      },
-                      codeAutoRetrievalTimeout: (e) {
-                        Utils().toastMessage(e.toString());
-                        setState(() {
-                          loading = false;
-                        });
-                      });
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>OtpScrean(phonenumber: '')));
+                  // setState(() {
+                  //   loading = false;
+                  // });
+                  // auth.verifyPhoneNumber(
+                  //   phoneNumber: "+91" + phoneController.text,
+                  //     verificationCompleted: (_) {},
+                  //     verificationFailed: (e) {
+                  //     Utils().toastMessage(e.toString());
+                  //       setState(() {
+                  //         loading = false;
+                  //       });
+                  //     },
+                  //     codeSent: (String verificationId, int? Token) {
+                  //       Navigator.push(
+                  //           context,
+                  //           MaterialPageRoute(
+                  //               builder: (context) =>
+                  //                   OtpScrean(phonenumber: verificationId)));
+                  //       setState(() {
+                  //         loading = false;
+                  //       });
+                  //     },
+                  //     codeAutoRetrievalTimeout: (e) {
+                  //       Utils().toastMessage(e.toString());
+                  //       setState(() {
+                  //         loading = false;
+                  //       });
+                  //     });
                 })
           ],
         ),

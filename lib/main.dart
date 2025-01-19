@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:whatsapp/bottombar.dart';
 import 'package:whatsapp/splash_screan.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return const GetMaterialApp(
       title: "Whatsapp Clone",
       debugShowCheckedModeBanner: false,
       home: SplashScrean(),

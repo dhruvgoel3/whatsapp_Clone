@@ -3,6 +3,7 @@ import 'package:whatsapp/AllAppUI/CallPage/calls.dart';
 import 'package:whatsapp/AllAppUI/ChatPage/listview.dart';
 import 'package:whatsapp/AllAppUI/ChatPage/popupbutton.dart';
 import 'package:whatsapp/AllAppUI/CommunityPage/communities.dart';
+import 'package:whatsapp/Screns/FloatingActionButton_HomePage/floating_page.dart';
 import 'package:whatsapp/Screns/ProfileSettingsPage/profile_page.dart';
 import 'package:whatsapp/AllAppUI/UpdatePage/updates.dart';
 import 'package:whatsapp/bottombar.dart';
@@ -14,10 +15,12 @@ class ChatPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.green,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => FloatingPage()));
+        },
         child: Icon(Icons.chat),
       ),
       appBar: AppBar(
@@ -53,7 +56,6 @@ class ChatPage extends StatelessWidget {
                 onLongPress: () {
                   print("Container is pressed for a long time");
                 },
-
                 child: Container(
                   height: size.height * 0.055,
                   width: size.width * 0.923,
@@ -85,63 +87,76 @@ class ChatPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 18,),
+            SizedBox(
+              height: 18,
+            ),
             Padding(
-              padding: const EdgeInsets.only(left: 8.0,right: 14),
+              padding: const EdgeInsets.only(left: 8.0, right: 14),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
-                    height: size.height*0.04,
-                    width: size.width*0.1,
+                    height: size.height * 0.04,
+                    width: size.width * 0.1,
                     decoration: BoxDecoration(
                         color: const Color(0xff20292f),
-                        borderRadius: BorderRadius.circular(15)
-                    ),
-                    child: const Center(child: Text("All",style: TextStyle(color: Colors.white38))),
+                        borderRadius: BorderRadius.circular(15)),
+                    child: const Center(
+                        child: Text("All",
+                            style: TextStyle(color: Colors.white38))),
                   ),
                   Container(
-                    height: size.height*0.04,
-                    width: size.width*0.18,
+                    height: size.height * 0.04,
+                    width: size.width * 0.18,
                     decoration: BoxDecoration(
                         color: const Color(0xff20292f),
-                        borderRadius: BorderRadius.circular(15)
-                    ),
-                    child: const Center(child: Text("Unread",style: TextStyle(color: Colors.white38))),
-                  ),
-
-                  Container(
-                    height:size.height*0.04,
-                    width: size.width*0.24,
-                    decoration: BoxDecoration(
-                        color: const Color(0xff20292f),
-                        borderRadius: BorderRadius.circular(15)
-                    ),
-                    child: const Center(child: Text("Favourities",style: TextStyle(color: Colors.white38),)),
-                  ),
-
-                  Container(
-                    height: size.height*0.04,
-                    width: size.width*0.17,
-                    decoration: BoxDecoration(
-                        color: const Color(0xff20292f),
-                        borderRadius: BorderRadius.circular(15)
-                    ),
-                    child: const Center(child: Text("Groups",style: TextStyle(color: Colors.white38),)),
+                        borderRadius: BorderRadius.circular(15)),
+                    child: const Center(
+                        child: Text("Unread",
+                            style: TextStyle(color: Colors.white38))),
                   ),
                   Container(
-                    height: size.height*0.04,
-                    width: size.width*0.1,
+                    height: size.height * 0.04,
+                    width: size.width * 0.24,
                     decoration: BoxDecoration(
                         color: const Color(0xff20292f),
-                        borderRadius: BorderRadius.circular(15)
-                    ),
-                    child: const Center(child: Icon(Icons.add,color: Colors.white38,)),
+                        borderRadius: BorderRadius.circular(15)),
+                    child: const Center(
+                        child: Text(
+                      "Favourities",
+                      style: TextStyle(color: Colors.white38),
+                    )),
+                  ),
+                  Container(
+                    height: size.height * 0.04,
+                    width: size.width * 0.17,
+                    decoration: BoxDecoration(
+                        color: const Color(0xff20292f),
+                        borderRadius: BorderRadius.circular(15)),
+                    child: const Center(
+                        child: Text(
+                      "Groups",
+                      style: TextStyle(color: Colors.white38),
+                    )),
+                  ),
+                  Container(
+                    height: size.height * 0.04,
+                    width: size.width * 0.1,
+                    decoration: BoxDecoration(
+                        color: const Color(0xff20292f),
+                        borderRadius: BorderRadius.circular(15)),
+                    child: const Center(
+                        child: Icon(
+                      Icons.add,
+                      color: Colors.white38,
+                    )),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 14,),
+            SizedBox(
+              height: 14,
+            ),
             Expanded(child: CloningList()),
           ],
         ),

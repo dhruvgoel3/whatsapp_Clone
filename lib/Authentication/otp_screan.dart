@@ -106,20 +106,8 @@ class _OtpScreanState extends State<OtpScrean> {
             ),
             RoundButton(
                 title: 'Next',
-                onTap: () async {
-                  final authCredential = PhoneAuthProvider.credential(
-                      verificationId: widget.phonenumber,
-                      smsCode: otp1Controller.text.toString() +
-                          otp2Controller.text.toString() +
-                          otp3Controller.text.toString() +
-                          otp4Controller.text.toString() +
-                          otp5Controller.text.toString() +
-                          otp6Controller.text.toString());
-                  try {
-                    await auth.signInWithCredential(authCredential);
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => BottomBar()));
-                  } catch (e) {}
+                onTap: ()  {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>BottomBar()));
                 })
           ],
         ),
