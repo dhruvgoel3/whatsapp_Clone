@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/AllAppUI/CallPage/calls.dart';
+import 'package:whatsapp/AllAppUI/ChatPage/Rename_Page_Ui/rename_page.dart';
 import 'package:whatsapp/AllAppUI/ChatPage/listview.dart';
 import 'package:whatsapp/AllAppUI/ChatPage/popupbutton.dart';
 import 'package:whatsapp/AllAppUI/CommunityPage/communities.dart';
@@ -95,25 +96,35 @@ class ChatPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Container(
-                    height: size.height * 0.04,
-                    width: size.width * 0.1,
-                    decoration: BoxDecoration(
-                        color: const Color(0xff20292f),
-                        borderRadius: BorderRadius.circular(15)),
-                    child: const Center(
-                        child: Text("All",
-                            style: TextStyle(color: Colors.white38))),
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> ChatPage()));
+                    },
+                    child: Container(
+                      height: size.height * 0.04,
+                      width: size.width * 0.1,
+                      decoration: BoxDecoration(
+                          color: const Color(0xff20292f),
+                          borderRadius: BorderRadius.circular(15)),
+                      child: const Center(
+                          child: Text("All",
+                              style: TextStyle(color: Colors.white38))),
+                    ),
                   ),
-                  Container(
-                    height: size.height * 0.04,
-                    width: size.width * 0.18,
-                    decoration: BoxDecoration(
-                        color: const Color(0xff20292f),
-                        borderRadius: BorderRadius.circular(15)),
-                    child: const Center(
-                        child: Text("Unread",
-                            style: TextStyle(color: Colors.white38))),
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> RenamePage()));
+                    },
+                    child: Container(
+                      height: size.height * 0.04,
+                      width: size.width * 0.18,
+                      decoration: BoxDecoration(
+                          color: const Color(0xff20292f),
+                          borderRadius: BorderRadius.circular(15)),
+                      child: const Center(
+                          child: Text("Unread",
+                              style: TextStyle(color: Colors.white38))),
+                    ),
                   ),
                   Container(
                     height: size.height * 0.04,
