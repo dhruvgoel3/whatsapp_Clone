@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/Screns/ProfileSettingsPage/AccountOption/Account_Page/account_page.dart';
 import 'package:whatsapp/Screns/ProfileSettingsPage/body_page.dart';
 
 class ProfilelistviewPage extends StatefulWidget {
@@ -11,6 +12,19 @@ class ProfilelistviewPage extends StatefulWidget {
 class _ProfilelistviewPageState extends State<ProfilelistviewPage> {
   @override
   Widget build(BuildContext context) {
+   List<String> chatNames = [
+     "Account",
+     "Privacy",
+     "Avatar",
+     "Lists",
+     "Chats",
+     "Chats",
+     "Notification"
+     "Storage and data",
+     "App language",
+     "Help",
+     "Invite friend"
+   ];
     return ListView.builder(
       shrinkWrap: true,
 
@@ -19,28 +33,34 @@ class _ProfilelistviewPageState extends State<ProfilelistviewPage> {
       itemBuilder: (BuildContext context, int index) {
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 5),
-          child: InkWell(
-
-            child: ListTile(
-              leading:  Icon(
-                Options[index].icon,
-                color: Colors.white54,size: 23  ,
-              ),
-
-              title: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 9.0),
-                child: Text(
-                  Options[index].label,
-                  style: TextStyle(
-                      fontSize: 17, fontWeight: FontWeight.w400, color: Colors.white),
+          child: ListTile(
+            onTap: () {
+              // Navigate to the chat details screen with the name
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AccountPage(Account: chatNames[index]),
                 ),
-              ),
-              subtitle: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8),
-                child: Text(Options[index].text,style: TextStyle(fontSize: 14,color: Colors.white54),),
-              ),
-
+              );
+            },
+            leading:  Icon(
+              Options[index].icon,
+              color: Colors.white54,size: 23  ,
             ),
+
+            title: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 9.0),
+              child: Text(
+                Options[index].label,
+                style: TextStyle(
+                    fontSize: 17, fontWeight: FontWeight.w400, color: Colors.white),
+              ),
+            ),
+            subtitle: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: Text(Options[index].text,style: TextStyle(fontSize: 14,color: Colors.white54),),
+            ),
+
           ),
         );
       }
