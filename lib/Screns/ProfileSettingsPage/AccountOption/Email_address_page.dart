@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../Widgets/round_button.dart';
+
 class EmailAddressPage extends StatelessWidget {
   const EmailAddressPage({super.key});
 
@@ -16,43 +17,100 @@ class EmailAddressPage extends StatelessWidget {
           ),
           leading: Icon(Icons.arrow_back, color: Colors.white)),
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical:70),
+        padding: const EdgeInsets.symmetric(vertical: 0),
         child: Column(
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(),
-              child: Image.asset("assets/Screenshot 2025-01-20 225137.png",height: 150,),
+              child: Image.asset(
+                "assets/Screenshot 2025-01-20 231354.png",
+                height: 150,
+              ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             Text(
               "Add email to protect your",
-              style: TextStyle(color: Colors.white, fontSize: 23,fontWeight: FontWeight.w500),
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 23,
+                  fontWeight: FontWeight.w500),
             ),
             Text(
               "account",
-              style: TextStyle(color: Colors.white, fontSize: 23,fontWeight: FontWeight.w500),
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 23,
+                  fontWeight: FontWeight.w500),
+            ),
+            SizedBox(
+              height: 10,
             ),
             Column(
               children: [
                 ListTile(
-                  leading: Icon(Icons.security,size: 26,color: Colors.grey,),
-                  title: Text("Create a passkey for a secure , easy",style: TextStyle(fontSize: 17,color: Colors.white,),),
-                  subtitle: Text("way log into your account",style: TextStyle(fontSize: 17,color: Colors.white,)),
+                  leading: Icon(
+                    Icons.security,
+                    size: 26,
+                    color: Colors.grey,
+                  ),
+                  title: Text(
+                    "Verify tour account,even without SMS",
+                    style: TextStyle(
+                      fontSize: 17,
+                      color: Colors.white,
+                    ),
+                  ),
                 ),
                 ListTile(
-                  leading: Icon(Icons.fingerprint,size: 26,color: Colors.grey,),
-                  title: Text("Login into whatsapp with your face,",style: TextStyle(fontSize: 17,color: Colors.white,),),
-                  subtitle: Text("fingerprint or screen lock",style: TextStyle(fontSize: 17,color: Colors.white,)),
+                  leading: Icon(
+                    Icons.question_answer_outlined,
+                    size: 26,
+                    color: Colors.grey,
+                  ),
+                  title: Text(
+                    "Email helps us reach you in case of",
+                    style: TextStyle(
+                      fontSize: 17,
+                      color: Colors.white,
+                    ),
+                  ),
+                  subtitle: Text("security and support issues",
+                      style: TextStyle(
+                        fontSize: 17,
+                        color: Colors.white,
+                      )),
                 ),
                 ListTile(
-                  leading: Icon(Icons.laptop,size: 26,color: Colors.white,),
-                  title: Text("Yout passkey is stored safely in your",style: TextStyle(fontSize: 17,color: Colors.white,),),
-                  subtitle: Text("password manager",style: TextStyle(fontSize: 17,color: Colors.white,)),
+                  leading: Icon(
+                    Icons.lock_outline,
+                    size: 26,
+                    color: Colors.white,
+                  ),
+                  title: Text(
+                    "Your email address won't be visiblr to",
+                    style: TextStyle(
+                      fontSize: 17,
+                      color: Colors.white,
+                    ),
+                  ),
+                  subtitle: Text("others",
+                      style: TextStyle(
+                        fontSize: 17,
+                        color: Colors.white,
+                      )),
                 ),
-
+                Text(
+                  "Learn more",
+                  style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.green,
+                      fontWeight: FontWeight.w500),
+                ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 100.0),
-                  child: RoundButton(title: "Create passkey", onTap: (){}),
+                  padding: const EdgeInsets.only(top: 200.0),
+                  child: RoundButton(title: "Create passkey", onTap: () {}),
                 )
               ],
             )
@@ -62,5 +120,3 @@ class EmailAddressPage extends StatelessWidget {
     );
   }
 }
-
-
