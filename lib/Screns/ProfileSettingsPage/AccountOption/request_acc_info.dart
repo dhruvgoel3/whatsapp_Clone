@@ -172,6 +172,27 @@ class RequestAccInfo extends StatelessWidget {
               ),
             ),
           ),
+          Divider(
+            thickness: 1.1,
+            color: Colors.white10,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20),
+            child: Row(
+              children: [
+                Text("A new report will be created every month",
+                    style: TextStyle(color: Colors.grey, fontSize: 15)),
+                SizedBox(
+                  width: 3,
+                ),
+                Text("Learn", style: TextStyle(color: Colors.lightBlue,fontWeight: FontWeight.w600, fontSize: 15)),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right: 310.0),
+            child: Text("more",style: TextStyle(color: Colors.lightBlue,fontWeight: FontWeight.w600, fontSize: 15)),
+          ),
 
 
         ]));

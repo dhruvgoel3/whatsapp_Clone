@@ -32,6 +32,7 @@ class ChatPage extends StatelessWidget {
         ),
         backgroundColor: Color(0xff0a131a),
         actions: [
+          IconButton(onPressed: (){}, icon: Icon(Icons.qr_code_scanner,size: 25,color: Colors.white,)),
           IconButton(
               onPressed: () {},
               icon: Icon(
