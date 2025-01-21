@@ -25,6 +25,7 @@ class ChatPage extends StatelessWidget {
         child: Icon(Icons.chat),
       ),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Text(
           "Whatsapp",
           style: TextStyle(

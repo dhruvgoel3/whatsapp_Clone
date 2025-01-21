@@ -9,7 +9,7 @@ import 'package:whatsapp/Screns/ProfileSettingsPage/AccountOption/security_optio
 import 'package:whatsapp/Screns/ProfileSettingsPage/AccountOption/two_step_verification.dart';
 
 class AccountPage extends StatefulWidget {
-  const AccountPage({super.key, required String Account});
+  const AccountPage({super.key,});
 
   @override
   State<AccountPage> createState() => _AccountPageState();

@@ -12,19 +12,7 @@ class ProfilelistviewPage extends StatefulWidget {
 class _ProfilelistviewPageState extends State<ProfilelistviewPage> {
   @override
   Widget build(BuildContext context) {
-   List<String> chatNames = [
-     "Account",
-     "Privacy",
-     "Avatar",
-     "Lists",
-     "Chats",
-     "Chats",
-     "Notification"
-     "Storage and data",
-     "App language",
-     "Help",
-     "Invite friend"
-   ];
+
     return ListView.builder(
       shrinkWrap: true,
 
@@ -39,7 +27,7 @@ class _ProfilelistviewPageState extends State<ProfilelistviewPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => AccountPage(Account: chatNames[index]),
+                  builder: Options[index].routeBuilder,
                 ),
               );
             },
