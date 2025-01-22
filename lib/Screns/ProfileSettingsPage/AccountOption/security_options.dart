@@ -11,6 +11,7 @@ class SecurityOptions extends StatefulWidget {
 class _SecurityOptionsState extends State<SecurityOptions> {
   @override
   Widget build(BuildContext context) {
+    bool light = true;
     return Scaffold(
       backgroundColor: Color(0xff0a131a),
       appBar: AppBar(
@@ -151,9 +152,24 @@ class _SecurityOptionsState extends State<SecurityOptions> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "Show security notifications on this device",
-                  style: TextStyle(color: Colors.white, fontSize: 18),
+                Row(
+                  children: [
+                    Text(
+                      "Show security notifications on this device",
+                      style: TextStyle(color: Colors.white, fontSize: 15),
+                    ),
+                    Switch(
+                      // This bool value toggles the switch.
+                      value: light,
+                      activeColor: Colors.green,
+                      onChanged: (bool value) {
+                        // This is called when the user toggles the switch.
+                        setState(() {
+                          light = value;
+                        });
+                      },
+                    ),
+                  ],
                 ),
                 Text("Get notified when your security code changes",
                     style: TextStyle(color: Colors.grey, fontSize: 15)),

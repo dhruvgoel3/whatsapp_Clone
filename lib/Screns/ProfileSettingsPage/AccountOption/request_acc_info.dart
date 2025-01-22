@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 
-class RequestAccInfo extends StatelessWidget {
+class RequestAccInfo extends StatefulWidget {
   const RequestAccInfo({super.key});
 
   @override
+  State<RequestAccInfo> createState() => _RequestAccInfoState();
+}
+
+class _RequestAccInfoState extends State<RequestAccInfo> {
+  @override
   Widget build(BuildContext context) {
+    bool light = true;
     return Scaffold(
         backgroundColor: Color(0xff0a131a),
         appBar: AppBar(
@@ -84,6 +90,17 @@ class RequestAccInfo extends StatelessWidget {
               style: TextStyle(
                 color: Colors.white,
               ),
+            ),
+            trailing:     Switch(
+              // This bool value toggles the switch.
+              value: light,
+              activeColor: Colors.green,
+              onChanged: (bool value) {
+                // This is called when the user toggles the switch.
+                setState(() {
+                  light = value;
+                });
+              },
             ),
           ),
           Divider(
@@ -171,6 +188,18 @@ class RequestAccInfo extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
+            trailing: Switch(
+              // This bool value toggles the switch.
+              value: light,
+              activeColor: Colors.green,
+              onChanged: (bool value) {
+                // This is called when the user toggles the switch.
+                setState(() {
+                  light = value;
+                });
+              },
+            ),
+            
           ),
           Divider(
             thickness: 1.1,

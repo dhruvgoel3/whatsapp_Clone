@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:whatsapp/Screns/ProfileSettingsPage/AccountOption/Account_Page/account_page.dart';
+import 'package:whatsapp/Screns/ProfileSettingsPage/AvatarOption/avatar_page.dart';
 
 class Option {
 
@@ -13,7 +14,7 @@ class Option {
 List Options = [
   Option(Icons.vpn_key_outlined, 'Account', 'Security nofications,change number',(context)=>AccountPage()),
   Option(Icons.lock_outline, 'Privacy', 'Block contacts, disappearing messages',(context)=>Placeholder()),
-  Option(Icons.person, 'Avatar', 'Create, edit,profile photo',(context)=>Placeholder()),
+  Option(Icons.person, 'Avatar', 'Create, edit,profile photo',(context)=>AvatarPage()),
   Option(Icons.favorite_border, 'Favourites', 'Add,reorder,remove',(context)=>Placeholder()),
   Option(Icons.chat_outlined, 'Chats', 'Theme,wallpapers,chat history',(context)=>Placeholder()),
   Option(Icons.notifications_none, 'Notifications', 'Message,group,call tones',(context)=>Placeholder()),
