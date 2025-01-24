@@ -4,6 +4,7 @@ import 'package:whatsapp/Screns/ProfileSettingsPage/AccountOption/Account_Page/a
 import 'package:whatsapp/Screns/ProfileSettingsPage/AppUpdates/updates_page.dart';
 import 'package:whatsapp/Screns/ProfileSettingsPage/AvatarOption/avatar_page.dart';
 import 'package:whatsapp/Screns/ProfileSettingsPage/ChatsOption/chats_page.dart';
+import 'package:whatsapp/Screns/ProfileSettingsPage/HelpOption/help_page.dart';
 import 'package:whatsapp/Screns/ProfileSettingsPage/InviteFriendOption/invite_friend_page.dart';
 import 'package:whatsapp/Screns/ProfileSettingsPage/ListsOption/list_page.dart';
 import 'package:whatsapp/Screns/ProfileSettingsPage/NotificationsOption/notifications_page.dart';
@@ -27,7 +28,7 @@ List Options = [
   Option(Icons.notifications_none, 'Notifications', 'Message,group,call tones',(context)=>NotificationsPage()),
   Option(Icons.data_saver_off_rounded, 'Storage and data', 'Network usage, auto-download',(context)=>StorageAndData()),
   Option(Icons.language, 'App language', 'English (devices language)',(context)=>Placeholder()),
-  Option(Icons.help_outline, 'Help', 'Help centre, contact us,privacy policy',(context)=>PrivacyPage()),
+  Option(Icons.help_outline, 'Help', 'Help centre, contact us,privacy policy',(context)=>HelpPage()),
   Option(Icons.people_alt_outlined, 'Invite a friend', '',(context)=>InviteFriendPage()),
   Option(Icons.security_update_good, 'App Updates', '',(context)=>AppUpdateSettings()),
 

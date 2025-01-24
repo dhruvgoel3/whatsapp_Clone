@@ -170,6 +170,20 @@ class _StorageAndDataState extends State<StorageAndData> {
             subtitle: Text("All media",
                 style: TextStyle(color: Colors.grey, fontSize: 13)),
           ),
+          ListTile(
+            leading: Icon(
+              Icons.hd_sharp,
+              color: Color(0xff0a131a),
+            ),
+            title: Text(
+              "When roaming",
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+            subtitle: Text("No media",
+                style: TextStyle(color: Colors.grey, fontSize: 13)),
+          ),
         ],
       ),
     );
