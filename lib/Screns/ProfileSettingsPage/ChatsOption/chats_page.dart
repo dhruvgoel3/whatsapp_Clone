@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 
 import '../profile_page.dart';
 
-class ChatsPage extends StatelessWidget {
+class ChatsPage extends StatefulWidget {
   const ChatsPage({super.key});
 
+  @override
+  State<ChatsPage> createState() => _ChatsPageState();
+}
+
+class _ChatsPageState extends State<ChatsPage> {
   @override
   Widget build(BuildContext context) {
     bool light = true;
@@ -272,6 +277,4 @@ class ChatsPage extends StatelessWidget {
       ),
     );
   }
-
-  void setState(Null Function() param0) {}
 }
