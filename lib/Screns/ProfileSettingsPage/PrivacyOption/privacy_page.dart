@@ -1,4 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:whatsapp/Screns/ProfileSettingsPage/PrivacyOption/PrivacyOnTapOptions/about_page.dart';
+import 'package:whatsapp/Screns/ProfileSettingsPage/PrivacyOption/PrivacyOnTapOptions/advanced_page.dart';
+import 'package:whatsapp/Screns/ProfileSettingsPage/PrivacyOption/PrivacyOnTapOptions/app_lock_page.dart';
+import 'package:whatsapp/Screns/ProfileSettingsPage/PrivacyOption/PrivacyOnTapOptions/blocked_contacts.dart';
+import 'package:whatsapp/Screns/ProfileSettingsPage/PrivacyOption/PrivacyOnTapOptions/calls_page.dart';
+import 'package:whatsapp/Screns/ProfileSettingsPage/PrivacyOption/PrivacyOnTapOptions/chat_lock_page.dart';
+import 'package:whatsapp/Screns/ProfileSettingsPage/PrivacyOption/PrivacyOnTapOptions/default_message_timer.dart';
+import 'package:whatsapp/Screns/ProfileSettingsPage/PrivacyOption/PrivacyOnTapOptions/groups_page.dart';
+import 'package:whatsapp/Screns/ProfileSettingsPage/PrivacyOption/PrivacyOnTapOptions/lastseen_and_online.dart';
+import 'package:whatsapp/Screns/ProfileSettingsPage/PrivacyOption/PrivacyOnTapOptions/profile_photo.dart';
+import 'package:whatsapp/Screns/ProfileSettingsPage/PrivacyOption/PrivacyOnTapOptions/status_page.dart';
 import 'package:whatsapp/Screns/ProfileSettingsPage/profile_page.dart';
 
 class PrivacyPage extends StatelessWidget {
@@ -38,6 +51,9 @@ class PrivacyPage extends StatelessWidget {
             ),
             SizedBox(height: 10),
             ListTile(
+              onTap: (){
+                Get.to(() => LastseenAndOnline());
+              },
               title: Text(
                 "Last seen and online",
                 style: TextStyle(
@@ -50,6 +66,9 @@ class PrivacyPage extends StatelessWidget {
               ),
             ),
             ListTile(
+              onTap: (){
+                Get.to(() => ProfilePhoto());
+              },
               title: Text(
                 "Profile photo",
                 style: TextStyle(
@@ -62,6 +81,9 @@ class PrivacyPage extends StatelessWidget {
               ),
             ),
             ListTile(
+              onTap: (){
+                Get.to(() => AboutPage());
+              },
               title: Text(
                 "About",
                 style: TextStyle(
@@ -74,6 +96,9 @@ class PrivacyPage extends StatelessWidget {
               ),
             ),
             ListTile(
+              onTap: (){
+                Get.to(() => StatusPage());
+              },
               title: Text(
                 "Status",
                 style: TextStyle(
@@ -83,6 +108,9 @@ class PrivacyPage extends StatelessWidget {
             ),
             SizedBox(height: 15),
             ListTile(
+              onTap: (){
+                Get.to(() =>());
+              },
               title: Text(
                 "Read Recipts",
                 style: TextStyle(
@@ -136,8 +164,11 @@ class PrivacyPage extends StatelessWidget {
               height: 10,
             ),
             ListTile(
+              onTap: (){
+                Get.to(() => DefaultMessageTimer());
+              },
               title: Text(
-                "Read Recipts",
+                "Default message timer",
                 style: TextStyle(
                   color: Colors.white,
                 ),
@@ -165,6 +196,9 @@ class PrivacyPage extends StatelessWidget {
               color: Colors.white10,
             ),
             ListTile(
+              onTap: (){
+                Get.to(() => GroupsPage());
+              },
               title: Text(
                 "Groups",
                 style: TextStyle(
@@ -177,6 +211,9 @@ class PrivacyPage extends StatelessWidget {
               ),
             ),
             ListTile(
+              onTap: (){
+                Get.to(() => CallsPage());
+              },
               title: Text(
                 "Calls",
                 style: TextStyle(
@@ -189,6 +226,9 @@ class PrivacyPage extends StatelessWidget {
               ),
             ),
             ListTile(
+              onTap: (){
+                Get.to(() => BlockedContacts());
+              },
               title: Text(
                 "Blocked contacts",
                 style: TextStyle(
@@ -201,6 +241,9 @@ class PrivacyPage extends StatelessWidget {
               ),
             ),
             ListTile(
+              onTap: (){
+                Get.to(() => AppLockPage());
+              },
               title: Text(
                 "App lock",
                 style: TextStyle(
@@ -213,6 +256,9 @@ class PrivacyPage extends StatelessWidget {
               ),
             ),
             ListTile(
+              onTap: (){
+                Get.to(() => ChatLockPage());
+              },
               title: Text(
                 "Chat lock",
                 style: TextStyle(
@@ -222,7 +268,7 @@ class PrivacyPage extends StatelessWidget {
             ),
             ListTile(
               title: Text(
-                "Allow camers effects",
+                "Allow camera effects",
                 style: TextStyle(
                   color: Colors.white,
                 ),
@@ -254,6 +300,9 @@ class PrivacyPage extends StatelessWidget {
               ),
             ),
             ListTile(
+              onTap: (){
+                Get.to(() => AdvancedPage());
+              },
               title: Text(
                 "Advanced",
                 style: TextStyle(
@@ -270,6 +319,9 @@ class PrivacyPage extends StatelessWidget {
               color: Colors.white10,
             ),
             ListTile(
+              onTap: (){
+                Get.to(() => PrivacyPage());
+              },
               title: Text(
                 "Privacy checkup",
                 style: TextStyle(
