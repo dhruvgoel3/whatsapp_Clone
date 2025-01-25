@@ -96,7 +96,9 @@ class ChatLockPage extends StatelessWidget {
                           color: Colors.grey, fontWeight: FontWeight.w400),
                     ),
 
-                  ]))
+                  ]
+              )
+          )
         ]));
   }
 }
