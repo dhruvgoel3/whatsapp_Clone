@@ -85,6 +85,7 @@ class _AccountPageState extends State<AccountPage> {
 
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>AddAccountPage()));
 
+
               },
               leading: Icon(Icons.person_add_alt_outlined,color: Colors.grey,size: 25,),
               title: Text("Add account",style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w500,fontSize: 16),),

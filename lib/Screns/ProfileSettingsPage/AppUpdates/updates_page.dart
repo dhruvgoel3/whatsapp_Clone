@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class AppUpdateSettings extends StatelessWidget {
@@ -7,9 +6,7 @@ class AppUpdateSettings extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-
         appBar: AppBar(
-
           title: const Text('App update settings'),
         ),
         body: Padding(
@@ -48,7 +45,7 @@ class AppUpdateSettings extends StatelessWidget {
                 onChanged: (bool value) {},
                 title: const Text('WhatsApp update available'),
                 subtitle:
-                const Text('Get notified when updates are available.'),
+                    const Text('Get notified when updates are available.'),
               ),
             ],
           ),
