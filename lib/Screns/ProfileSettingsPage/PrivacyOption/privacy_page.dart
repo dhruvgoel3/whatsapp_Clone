@@ -11,8 +11,8 @@ import 'package:whatsapp/Screns/ProfileSettingsPage/PrivacyOption/PrivacyOnTapOp
 import 'package:whatsapp/Screns/ProfileSettingsPage/PrivacyOption/PrivacyOnTapOptions/groups_page.dart';
 import 'package:whatsapp/Screns/ProfileSettingsPage/PrivacyOption/PrivacyOnTapOptions/lastseen_and_online.dart';
 import 'package:whatsapp/Screns/ProfileSettingsPage/PrivacyOption/PrivacyOnTapOptions/profile_photo.dart';
-import 'package:whatsapp/Screns/ProfileSettingsPage/PrivacyOption/PrivacyOnTapOptions/status_page.dart';
 import 'package:whatsapp/Screns/ProfileSettingsPage/profile_page.dart';
+import 'package:whatsapp/Screns/UpdateScreans/status_privacy_page.dart';
 
 class PrivacyPage extends StatelessWidget {
   const PrivacyPage({super.key});
@@ -97,7 +97,7 @@ class PrivacyPage extends StatelessWidget {
             ),
             ListTile(
               onTap: (){
-                Get.to(() => StatusPage());
+                Get.to(() => StatusPrivacyPage());
               },
               title: Text(
                 "Status",
