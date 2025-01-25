@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../profile_page.dart';
 
@@ -44,6 +46,48 @@ class _ChatsPageState extends State<ChatsPage> {
               height: 10,
             ),
             ListTile(
+              onTap: () {
+                Get.defaultDialog(
+
+                  content: Column(
+                    children: [
+                      ListTile(
+                        title: Text("System default",style: TextStyle(color: Colors.white),),
+                        leading: Icon(Icons.radio_button_checked_sharp,color: Colors.green,),
+                      ),
+                      ListTile(
+                        title: Text("Light",style: TextStyle(color: Colors.white),),
+                        leading: Icon(Icons.circle_outlined,color: Colors.grey,),
+                      ),
+                      ListTile(
+                        title: Text("Dark",style: TextStyle(color: Colors.white),),
+                        leading: Icon(Icons.circle_outlined,color: Colors.grey,),
+                      ),
+                    ],
+                  ),
+                  backgroundColor: Color(0xff2b2e33),
+                    title: 'Choose theme',
+                    titleStyle: TextStyle(color: Colors.white),
+                    titlePadding: EdgeInsets.only(top: 20,right: 70),
+                    contentPadding: EdgeInsets.only(left: 10,top: 10),
+
+                    confirm: TextButton(
+                        onPressed: () {
+                          Get.back();
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom: 20.0),
+                          child: Text("OK",style: TextStyle(color: Colors.green),),
+                        )),
+                    cancel: TextButton(
+                        onPressed: () {
+                          Get.back();
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 3.0,bottom: 20),
+                          child: Text("Cancel",style: TextStyle(color: Colors.green),),
+                        )));
+              },
               leading: Icon(
                 Icons.brightness_6_outlined,
                 color: Colors.grey,
@@ -148,6 +192,48 @@ class _ChatsPageState extends State<ChatsPage> {
                   ]),
             ),
             ListTile(
+              onTap: () {
+                Get.defaultDialog(
+
+                    content: Column(
+                      children: [
+                        ListTile(
+                          title: Text("Small",style: TextStyle(color: Colors.white),),
+                          leading: Icon(Icons.circle_outlined,color: Colors.grey,),
+                        ),
+                        ListTile(
+                          title: Text("Medium",style: TextStyle(color: Colors.white),),
+                          leading: Icon(Icons.radio_button_checked,color: Colors.green,),
+                        ),
+                        ListTile(
+                          title: Text("Large",style: TextStyle(color: Colors.white),),
+                          leading: Icon(Icons.circle_outlined,color: Colors.grey,),
+                        ),
+                      ],
+                    ),
+                    backgroundColor: Color(0xff2b2e33),
+                    title: 'Choose theme',
+                    titleStyle: TextStyle(color: Colors.white),
+                    titlePadding: EdgeInsets.only(top: 20,right: 70),
+                    contentPadding: EdgeInsets.only(left: 10,top: 10),
+
+                    confirm: TextButton(
+                        onPressed: () {
+                          Get.back();
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom: 20.0),
+                          child: Text("OK",style: TextStyle(color: Colors.green),),
+                        )),
+                    cancel: TextButton(
+                        onPressed: () {
+                          Get.back();
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 3.0,bottom: 20),
+                          child: Text("Cancel",style: TextStyle(color: Colors.green),),
+                        )));
+              },
               leading: Icon(
                 Icons.wallpaper,
                 color: Color(0xff0a131a),

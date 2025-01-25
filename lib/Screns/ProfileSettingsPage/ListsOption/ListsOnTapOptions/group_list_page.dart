@@ -49,7 +49,6 @@ class _GroupListPageState extends State<GroupListPage> {
                       fontWeight: FontWeight.w600,
                       fontSize: 13),
                 ),
-
               ],
             ),
           ),

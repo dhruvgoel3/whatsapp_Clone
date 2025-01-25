@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../profile_page.dart';
 
@@ -104,6 +106,103 @@ class _StorageAndDataState extends State<StorageAndData> {
             thickness: 1,
           ),
           ListTile(
+            onTap: () {
+              Get.defaultDialog(
+                  content: Column(
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Select the quality for photod and videos",
+                            style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 13,
+                                fontWeight: FontWeight.w400),
+                          ),
+                          Text(
+                            "to be sent at in chats",
+                            style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 13,
+                                fontWeight: FontWeight.w400),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      ListTile(
+                        title: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Standard quality",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 13),
+                            ),
+                            Text(
+                              "Faster to send,smaller file size",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 13),
+                            ),
+                          ],
+                        ),
+                        leading:
+                            Icon(Icons.circle_outlined, color: Colors.grey),
+                      ),
+                      ListTile(
+                        title: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "HD quality",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 13),
+                            ),
+                            Text(
+                              "Slower to send,can be 6 times larger",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 13),
+                            ),
+                          ],
+                        ),
+                        leading:
+                            Icon(Icons.radio_button_checked, color: Colors.green),
+                      ),
+                    ],
+                  ),
+                  backgroundColor: Color(0xff2b2e33),
+                  title: 'Choose theme',
+                  titleStyle: TextStyle(color: Colors.white),
+                  titlePadding: EdgeInsets.only(top: 20, right: 70),
+                  contentPadding: EdgeInsets.only(left: 10, top: 10),
+                  confirm: TextButton(
+                      onPressed: () {
+                        Get.back();
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 20.0),
+                        child: Text(
+                          "OK",
+                          style: TextStyle(color: Colors.green),
+                        ),
+                      )),
+                  cancel: TextButton(
+                      onPressed: () {
+                        Get.back();
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 3.0, bottom: 20),
+                        child: Text(
+                          "Cancel",
+                          style: TextStyle(color: Colors.green),
+                        ),
+                      )));
+            },
             leading: Icon(
               Icons.hd_sharp,
               color: Colors.grey,
