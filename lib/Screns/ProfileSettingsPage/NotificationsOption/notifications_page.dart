@@ -1,4 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:whatsapp/utils/switch.dart';
 
 import '../profile_page.dart';
 
@@ -12,8 +16,6 @@ class NotificationsPage extends StatefulWidget {
 class _NotificationsPageState extends State<NotificationsPage> {
   @override
   Widget build(BuildContext context) {
-    bool light = true;
-    bool light2 = false;
     return Scaffold(
       backgroundColor: Color(0xff0a131a),
       appBar: AppBar(
@@ -28,7 +30,6 @@ class _NotificationsPageState extends State<NotificationsPage> {
               ),
             )
           ],
-
           title: Text(
             "Notifications",
             style: TextStyle(color: Colors.white, fontWeight: FontWeight.w400),
@@ -53,17 +54,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
                   color: Colors.white,
                 ),
               ),
-              trailing: Switch(
-                // This bool value toggles the switch.
-                value: light,
-                activeColor: Colors.green,
-                onChanged: (bool value) {
-                  // This is called when the user toggles the switch.
-                  setState(() {
-                    light = value;
-                  });
-                },
-              ),
+              trailing: Utils().getSwitch(),
               subtitle: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -84,17 +75,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
                   color: Colors.white,
                 ),
               ),
-              trailing: Switch(
-                // This bool value toggles the switch.
-                value: light,
-                activeColor: Colors.green,
-                onChanged: (bool value) {
-                  // This is called when the user toggles the switch.
-                  setState(() {
-                    light = value;
-                  });
-                },
-              ),
+              trailing: Utils().getSwitch(),
               subtitle: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -130,6 +111,55 @@ class _NotificationsPageState extends State<NotificationsPage> {
                   style: TextStyle(color: Colors.grey, fontSize: 13)),
             ),
             ListTile(
+              onTap: () {
+                Get.defaultDialog(
+                    backgroundColor: Color(0xff2b2e33),
+                    content: Column(
+                      children: [
+                        ListTile(
+                          leading: Icon(CupertinoIcons.circle,color: Colors.grey,),
+                          title: Text("Off",style: TextStyle(color: Colors.white),),
+                        ),
+                        ListTile(
+                          leading: Icon(Icons.radio_button_checked_sharp,color: Colors.green,),
+                          title: Text("Default",style: TextStyle(color: Colors.white),),
+                        ),
+                        ListTile(
+                          leading: Icon(CupertinoIcons.circle,color: Colors.grey,),
+                          title: Text("Short",style: TextStyle(color: Colors.white),),
+                        ),
+                        ListTile(
+                          leading: Icon(CupertinoIcons.circle,color: Colors.grey,),
+                          title: Text("Long",style: TextStyle(color: Colors.white),),
+                        ),
+                      ],
+                    ),
+                    title: 'Vibrate',
+                    titleStyle: TextStyle(color: Colors.white, fontSize: 19,),
+                    titlePadding: EdgeInsets.only(top: 20, right: 30),
+                    confirm: TextButton(
+                        onPressed: () {
+                          Get.back();
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom: 20.0),
+                          child: Text(
+                            "OK",
+                            style: TextStyle(color: Colors.green),
+                          ),
+                        )),
+                    cancel: TextButton(
+                        onPressed: () {
+                          Get.back();
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 3.0, bottom: 20),
+                          child: Text(
+                            "Cancel",
+                            style: TextStyle(color: Colors.green),
+                          ),
+                        )));
+              },
               title: Text(
                 "Vibrate",
                 style: TextStyle(
@@ -140,6 +170,47 @@ class _NotificationsPageState extends State<NotificationsPage> {
                   style: TextStyle(color: Colors.grey, fontSize: 13)),
             ),
             ListTile(
+              onTap: () {
+                Get.defaultDialog(
+                    content: Column(
+                      children: [
+                        ListTile(
+                          title: Text("System default",style: TextStyle(color: Colors.white),),
+                          leading: Icon(Icons.radio_button_checked,color: Colors.green,),
+                        ),
+                        ListTile(
+                          title: Text("Large",style: TextStyle(color: Colors.white),),
+                          leading: Icon(Icons.circle_outlined,color: Colors.grey,),
+                        ),
+                        ListTile(
+                          title: Text("Dark",style: TextStyle(color: Colors.white),),
+                          leading: Icon(Icons.circle_outlined,color: Colors.grey,),
+                        ),
+                      ],
+                    ),
+                    backgroundColor: Color(0xff2b2e33),
+                    title: 'Choose theme',
+                    titleStyle: TextStyle(color: Colors.white),
+                    titlePadding: EdgeInsets.only(top: 20,right: 70),
+                    contentPadding: EdgeInsets.only(left: 10,top: 10),
+
+                    confirm: TextButton(
+                        onPressed: () {
+                          Get.back();
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom: 20.0),
+                          child: Text("OK",style: TextStyle(color: Colors.green),),
+                        )),
+                    cancel: TextButton(
+                        onPressed: () {
+                          Get.back();
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 3.0,bottom: 20),
+                          child: Text("Cancel",style: TextStyle(color: Colors.green),),
+                        )));
+              },
               title: Text(
                 "Light",
                 style: TextStyle(
@@ -156,17 +227,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
                   color: Colors.white,
                 ),
               ),
-              trailing: Switch(
-                // This bool value toggles the switch.
-                value: light2,
-                activeColor: Colors.green,
-                onChanged: (bool value) {
-                  // This is called when the user toggles the switch.
-                  setState(() {
-                    light2 = value;
-                  });
-                },
-              ),
+              trailing: Utils().getSwitch(),
               subtitle: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -187,17 +248,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
                   color: Colors.white,
                 ),
               ),
-              trailing: Switch(
-                // This bool value toggles the switch.
-                value: light2,
-                activeColor: Colors.green,
-                onChanged: (bool value) {
-                  // This is called when the user toggles the switch.
-                  setState(() {
-                    light2 = value;
-                  });
-                },
-              ),
+              trailing: Utils().getSwitch(),
               subtitle: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -227,6 +278,55 @@ class _NotificationsPageState extends State<NotificationsPage> {
                   style: TextStyle(color: Colors.grey, fontSize: 13)),
             ),
             ListTile(
+              onTap: () {
+                Get.defaultDialog(
+                    backgroundColor: Color(0xff2b2e33),
+                    content: Column(
+                      children: [
+                        ListTile(
+                          leading: Icon(CupertinoIcons.circle,color: Colors.grey,),
+                          title: Text("Off",style: TextStyle(color: Colors.white),),
+                        ),
+                        ListTile(
+                          leading: Icon(Icons.radio_button_checked_sharp,color: Colors.green,),
+                          title: Text("Default",style: TextStyle(color: Colors.white),),
+                        ),
+                        ListTile(
+                          leading: Icon(CupertinoIcons.circle,color: Colors.grey,),
+                          title: Text("Short",style: TextStyle(color: Colors.white),),
+                        ),
+                        ListTile(
+                          leading: Icon(CupertinoIcons.circle,color: Colors.grey,),
+                          title: Text("Long",style: TextStyle(color: Colors.white),),
+                        ),
+                      ],
+                    ),
+                    title: 'Vibrate',
+                    titleStyle: TextStyle(color: Colors.white, fontSize: 19,),
+                    titlePadding: EdgeInsets.only(top: 20, right: 30),
+                    confirm: TextButton(
+                        onPressed: () {
+                          Get.back();
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom: 20.0),
+                          child: Text(
+                            "OK",
+                            style: TextStyle(color: Colors.green),
+                          ),
+                        )),
+                    cancel: TextButton(
+                        onPressed: () {
+                          Get.back();
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 3.0, bottom: 20),
+                          child: Text(
+                            "Cancel",
+                            style: TextStyle(color: Colors.green),
+                          ),
+                        )));
+              },
               title: Text(
                 "Vibrate",
                 style: TextStyle(
@@ -237,6 +337,48 @@ class _NotificationsPageState extends State<NotificationsPage> {
                   style: TextStyle(color: Colors.grey, fontSize: 13)),
             ),
             ListTile(
+              onTap: () {
+                Get.defaultDialog(
+                    content: Column(
+                      children: [
+                        ListTile(
+                          title: Text("System default",style: TextStyle(color: Colors.white),),
+                          leading: Icon(Icons.radio_button_checked,color: Colors.green,),
+                        ),
+                        ListTile(
+                          title: Text("Large",style: TextStyle(color: Colors.white),),
+                          leading: Icon(Icons.circle_outlined,color: Colors.grey,),
+                        ),
+                        ListTile(
+                          title: Text("Dark",style: TextStyle(color: Colors.white),),
+                          leading: Icon(Icons.circle_outlined,color: Colors.grey,),
+                        ),
+                      ],
+                    ),
+                    backgroundColor: Color(0xff2b2e33),
+                    title: 'Choose theme',
+                    titleStyle: TextStyle(color: Colors.white),
+                    titlePadding: EdgeInsets.only(top: 20,right: 70),
+                    contentPadding: EdgeInsets.only(left: 10,top: 10),
+
+                    confirm: TextButton(
+                        onPressed: () {
+                          Get.back();
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom: 20.0),
+                          child: Text("OK",style: TextStyle(color: Colors.green),),
+                        )),
+                    cancel: TextButton(
+                        onPressed: () {
+                          Get.back();
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 3.0,bottom: 20),
+                          child: Text("Cancel",style: TextStyle(color: Colors.green),),
+                        )));
+              },
+
               title: Text(
                 "Light",
                 style: TextStyle(
@@ -253,17 +395,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
                   color: Colors.white,
                 ),
               ),
-              trailing: Switch(
-                // This bool value toggles the switch.
-                value: light2,
-                activeColor: Colors.green,
-                onChanged: (bool value) {
-                  // This is called when the user toggles the switch.
-                  setState(() {
-                    light2 = value;
-                  });
-                },
-              ),
+              trailing: Utils().getSwitch(),
               subtitle: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -284,17 +416,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
                   color: Colors.white,
                 ),
               ),
-              trailing: Switch(
-                // This bool value toggles the switch.
-                value: light2,
-                activeColor: Colors.green,
-                onChanged: (bool value) {
-                  // This is called when the user toggles the switch.
-                  setState(() {
-                    light2 = value;
-                  });
-                },
-              ),
+              trailing: Utils().getSwitch(),
               subtitle: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -324,6 +446,55 @@ class _NotificationsPageState extends State<NotificationsPage> {
                   style: TextStyle(color: Colors.grey, fontSize: 13)),
             ),
             ListTile(
+              onTap: () {
+                Get.defaultDialog(
+                    backgroundColor: Color(0xff2b2e33),
+                    content: Column(
+                      children: [
+                        ListTile(
+                          leading: Icon(CupertinoIcons.circle,color: Colors.grey,),
+                          title: Text("Off",style: TextStyle(color: Colors.white),),
+                        ),
+                        ListTile(
+                          leading: Icon(Icons.radio_button_checked_sharp,color: Colors.green,),
+                          title: Text("Default",style: TextStyle(color: Colors.white),),
+                        ),
+                        ListTile(
+                          leading: Icon(CupertinoIcons.circle,color: Colors.grey,),
+                          title: Text("Short",style: TextStyle(color: Colors.white),),
+                        ),
+                        ListTile(
+                          leading: Icon(CupertinoIcons.circle,color: Colors.grey,),
+                          title: Text("Long",style: TextStyle(color: Colors.white),),
+                        ),
+                      ],
+                    ),
+                    title: 'Vibrate',
+                    titleStyle: TextStyle(color: Colors.white, fontSize: 19,),
+                    titlePadding: EdgeInsets.only(top: 20, right: 30),
+                    confirm: TextButton(
+                        onPressed: () {
+                          Get.back();
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom: 20.0),
+                          child: Text(
+                            "OK",
+                            style: TextStyle(color: Colors.green),
+                          ),
+                        )),
+                    cancel: TextButton(
+                        onPressed: () {
+                          Get.back();
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 3.0, bottom: 20),
+                          child: Text(
+                            "Cancel",
+                            style: TextStyle(color: Colors.green),
+                          ),
+                        )));
+              },
               title: Text(
                 "Vibrate",
                 style: TextStyle(
@@ -343,41 +514,25 @@ class _NotificationsPageState extends State<NotificationsPage> {
                   style: TextStyle(color: Colors.grey, fontSize: 14)),
             ),
             ListTile(
-              leading: Icon(
-                Icons.wallpaper,
-                color: Color(0xff0a131a),
-              ),
+
               title: Text(
                 "Reactions",
                 style: TextStyle(
                   color: Colors.white,
                 ),
               ),
-              trailing: Switch(
-                // This bool value toggles the switch.
-                value: light,
-                activeColor: Colors.green,
-                onChanged: (bool value) {
-                  // This is called when the user toggles the switch.
-                  setState(() {
-                    light = value;
-                  });
-                },
-              ),
+              trailing: Utils().getSwitch(),
               subtitle: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text("Show notifications when you get likes on a status",
                         style: TextStyle(color: Colors.grey, fontSize: 13)),
-
                   ]),
             ),
-
           ],
         ),
       ),
     );
   }
-
 }

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:whatsapp/Screns/ProfileSettingsPage/ChatsOption/ChatOnTapOptions/backup_page.dart';
+import 'package:whatsapp/Screns/ProfileSettingsPage/ChatsOption/ChatOnTapOptions/chat_history.dart';
+import 'package:whatsapp/Screns/ProfileSettingsPage/ChatsOption/ChatOnTapOptions/transfer_chats_page.dart';
 
 import '../profile_page.dart';
 
@@ -195,6 +198,7 @@ class _ChatsPageState extends State<ChatsPage> {
               onTap: () {
                 Get.defaultDialog(
 
+
                     content: Column(
                       children: [
                         ListTile(
@@ -323,6 +327,7 @@ class _ChatsPageState extends State<ChatsPage> {
               thickness: 1,
             ),
             ListTile(
+              onTap: ()=> Get.to(()=>BackupPage()),
               leading: Icon(
                 Icons.backup_outlined,
                 color: Colors.grey,
@@ -335,6 +340,7 @@ class _ChatsPageState extends State<ChatsPage> {
               ),
             ),
             ListTile(
+              onTap:() => Get.to(() => TransferChatsPage()),
               leading: Icon(
                 Icons.send_to_mobile,
                 color: Colors.grey,
@@ -347,6 +353,7 @@ class _ChatsPageState extends State<ChatsPage> {
               ),
             ),
             ListTile(
+              onTap: ()=> Get.to(()=>ChatHistory()),
               leading: Icon(
                 Icons.update_sharp,
                 color: Colors.grey,

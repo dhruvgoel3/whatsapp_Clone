@@ -32,5 +32,9 @@ List Options = [
   Option(Icons.help_outline, 'Help', 'Help centre, contact us,privacy policy',(context)=>HelpPage()),
   Option(Icons.people_alt_outlined, 'Invite a friend', '',(context)=>InviteFriendPage()),
   Option(Icons.security_update_good, 'App Updates', '',(context)=>AppUpdateSettings()),
+  Option(Icons.add_circle_outline, 'Open Instagram', '',(context)=>AppUpdateSettings()),
+  Option(Icons.add_circle_outline, '', '',(context)=>AppUpdateSettings()),
+  Option(Icons.add_circle_outline, 'App Updates', '',(context)=>AppUpdateSettings()),
+
 
 ];
