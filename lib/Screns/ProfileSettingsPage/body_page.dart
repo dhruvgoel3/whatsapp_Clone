@@ -11,6 +11,7 @@ import 'package:whatsapp/Screns/ProfileSettingsPage/ListsOption/list_page.dart';
 import 'package:whatsapp/Screns/ProfileSettingsPage/NotificationsOption/notifications_page.dart';
 import 'package:whatsapp/Screns/ProfileSettingsPage/PrivacyOption/privacy_page.dart';
 import 'package:whatsapp/Screns/ProfileSettingsPage/StorageAndData/storage_and_data.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Option {
 
@@ -32,9 +33,9 @@ List Options = [
   Option(Icons.help_outline, 'Help', 'Help centre, contact us,privacy policy',(context)=>HelpPage()),
   Option(Icons.people_alt_outlined, 'Invite a friend', '',(context)=>InviteFriendPage()),
   Option(Icons.security_update_good, 'App Updates', '',(context)=>AppUpdateSettings()),
-  Option(Icons.add_circle_outline, 'Open Instagram', '',(context)=>AppUpdateSettings()),
-  Option(Icons.add_circle_outline, '', '',(context)=>AppUpdateSettings()),
-  Option(Icons.add_circle_outline, 'App Updates', '',(context)=>AppUpdateSettings()),
+  // Option(Icons.add_circle_outline, 'Open Instagram', '',(context)=>Placeholder()),
+  // Option(Icons.add_circle_outline, 'Open Facebook', '',(context)=>Placeholder()),
+  // Option(Icons.add_circle_outline, 'Open Threads', '',(context)=>Placeholder()),
 
 
 ];

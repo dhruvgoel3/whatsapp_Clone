@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:whatsapp/Screns/ProfileSettingsPage/HelpOption/HelpOnTapOptions/app_info.dart';
+import 'package:whatsapp/Screns/ProfileSettingsPage/HelpOption/HelpOnTapOptions/channel_reports.dart';
+import 'package:whatsapp/Screns/ProfileSettingsPage/HelpOption/HelpOnTapOptions/help_centre.dart';
+import 'package:whatsapp/Screns/ProfileSettingsPage/HelpOption/HelpOnTapOptions/terms_policy.dart';
 
 import '../profile_page.dart';
 class HelpPage extends StatelessWidget {
@@ -27,6 +33,7 @@ class HelpPage extends StatelessWidget {
             thickness: 1,
           ),
           ListTile(
+            onTap: ()=> Get.to(()=>HelpCentre()),
             title: Text(
               "Help centre",
               style: TextStyle(
@@ -38,6 +45,7 @@ class HelpPage extends StatelessWidget {
             leading: Icon(Icons.help_outline,color: Colors.grey,),
           ),
           ListTile(
+            onTap: ()=> Get.to(()=>TermsPolicy()),
             title: Text(
               "Terms and Privacy Policy",
               style: TextStyle(
@@ -47,6 +55,7 @@ class HelpPage extends StatelessWidget {
             leading: Icon(Icons.file_copy_outlined,color: Colors.grey,),
           ),
           ListTile(
+            onTap: ()=> Get.to(()=>ChannelReports()),
             title: Text(
               "Channel reports",
               style: TextStyle(
@@ -56,6 +65,7 @@ class HelpPage extends StatelessWidget {
             leading: Icon(Icons.messenger_outline,color: Colors.grey,),
           ),
           ListTile(
+            onTap: ()=> Get.to(()=>AppInfo()),
             title: Text(
               "App info",
               style: TextStyle(
