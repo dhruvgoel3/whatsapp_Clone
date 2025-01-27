@@ -1,4 +1,9 @@
+import 'dart:io';
+
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:whatsapp/AllAppUI/CallPage/calls.dart';
 import 'package:whatsapp/AllAppUI/ChatPage/Rename_Page_Ui/rename_page.dart';
 import 'package:whatsapp/AllAppUI/ChatPage/listview.dart';
@@ -9,11 +14,33 @@ import 'package:whatsapp/Screns/ProfileSettingsPage/profile_page.dart';
 import 'package:whatsapp/AllAppUI/UpdatePage/updates.dart';
 import 'package:whatsapp/bottombar.dart';
 
-class ChatPage extends StatelessWidget {
+class ChatPage extends StatefulWidget {
   ChatPage({super.key});
 
   @override
+  State<ChatPage> createState() => _ChatPageState();
+}
+
+class _ChatPageState extends State<ChatPage> {
+  set image(File image) {}
+
+  @override
   Widget build(BuildContext context) {
+    File? image;
+
+    Future pickImage() async {
+      try {
+        await ImagePicker().pickImage(source: ImageSource.camera);
+        if (image == null) return;
+        final imageTemporary = File(image!.path);
+        this.image = imageTemporary;
+      } catch (e) {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text('Failed to pick image : $e'),
+        ));
+      }
+    }
+
     var size = MediaQuery.of(context).size;
     return Scaffold(
       floatingActionButton: FloatingActionButton(
@@ -33,9 +60,19 @@ class ChatPage extends StatelessWidget {
         ),
         backgroundColor: Color(0xff0a131a),
         actions: [
-          IconButton(onPressed: (){}, icon: Icon(Icons.qr_code_scanner,size: 25,color: Colors.white,)),
           IconButton(
               onPressed: () {},
+              icon: Icon(
+                Icons.qr_code_scanner,
+                size: 25,
+                color: Colors.white,
+              )),
+          IconButton(
+              onPressed: () {
+                setState(() {
+                  pickImage();
+                });
+              },
               icon: Icon(
                 Icons.camera_alt_outlined,
                 color: Colors.white,
@@ -99,8 +136,9 @@ class ChatPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   InkWell(
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> ChatPage()));
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => ChatPage()));
                     },
                     child: Container(
                       height: size.height * 0.04,
@@ -114,8 +152,11 @@ class ChatPage extends StatelessWidget {
                     ),
                   ),
                   InkWell(
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> RenamePage()));
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => RenamePage()));
                     },
                     child: Container(
                       height: size.height * 0.04,
