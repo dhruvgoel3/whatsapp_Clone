@@ -49,6 +49,7 @@ class _ChatPageState extends State<ChatPage> {
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => FloatingPage()));
         },
+
         child: Icon(Icons.chat),
       ),
       appBar: AppBar(
@@ -64,7 +65,7 @@ class _ChatPageState extends State<ChatPage> {
               onPressed: () {},
               icon: Icon(
                 Icons.qr_code_scanner,
-                size: 25,
+                size: 24,
                 color: Colors.white,
               )),
           IconButton(
