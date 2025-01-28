@@ -1,15 +1,44 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:whatsapp/Screns/UpdateScreans/create_channel_page.dart';
 import 'package:whatsapp/Screns/UpdateScreans/status_privacy_page.dart';
 import 'package:whatsapp/Screns/ProfileSettingsPage/profile_page.dart';
 
-class Updates extends StatelessWidget {
+import '../../Screns/FloatingActionButton_HomePage/floating_page.dart';
+
+class Updates extends StatefulWidget {
   const Updates({super.key});
+
+  @override
+  State<Updates> createState() => _UpdatesState();
+}
+
+class _UpdatesState extends State<Updates> {
+  File? image;
+
+  Future pickImage() async {
+    try {
+      await ImagePicker().pickImage(source: ImageSource.gallery);
+      if (image == null) return;
+      final imageTemporary = File(image!.path);
+      this.image = imageTemporary;
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text('Failed to pick image : $e'),
+      ));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     var scrwidth = MediaQuery.of(context).size.width;
     var scrheight = MediaQuery.of(context).size.height;
+    var size = MediaQuery.of(context).size;
+
     List<String> whatsappChannelNames = [
       'Study Notion',
       'Telgu Space',
@@ -78,17 +107,39 @@ class Updates extends StatelessWidget {
       Image.asset('assets/dhruv photo.jpg'),
     ];
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.green,
-        onPressed: () {},
-        child: Icon(Icons.camera_alt_sharp),
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Container(
+            height: size.width * 0.119,
+            width: size.width * 0.11,
+            margin: EdgeInsets.only(bottom: 10),
+            child: FloatingActionButton(
+                onPressed: () {},
+                backgroundColor: Color.fromARGB(255, 24, 46, 49),
+                child: Icon(
+                  Icons.edit,
+                  color: Colors.white,
+                )),
+          ),
+          FloatingActionButton(
+            backgroundColor: Colors.green,
+            onPressed: () {
+              setState(() {
+                pickImage();
+              });
+            },
+            child: Icon(Icons.camera_alt_sharp),
+          ),
+        ],
       ),
       backgroundColor: Color(0xFF0B141B),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Color(0xFF0B141B),
         title: Text(
             style: TextStyle(
-                fontWeight: FontWeight.w400, fontSize: 27, color: Colors.white),
+                fontWeight: FontWeight.w400, fontSize: 25, color: Colors.white),
             textAlign: TextAlign.left,
             'Updates'),
         actions: [

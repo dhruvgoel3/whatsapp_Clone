@@ -61,6 +61,8 @@ class Communities extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xff0a131a),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
+
         title: Text(
           "Communities",
           style: TextStyle(

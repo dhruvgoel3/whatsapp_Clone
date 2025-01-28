@@ -15,6 +15,8 @@ class Calls extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xff0a131a),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
+
         title: Text(
           "Calls",
           style: TextStyle(

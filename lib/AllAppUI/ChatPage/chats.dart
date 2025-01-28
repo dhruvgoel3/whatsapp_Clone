@@ -3,6 +3,8 @@ import 'dart:io';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:whatsapp/AllAppUI/CallPage/calls.dart';
 import 'package:whatsapp/AllAppUI/ChatPage/Rename_Page_Ui/rename_page.dart';
@@ -43,21 +45,36 @@ class _ChatPageState extends State<ChatPage> {
 
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.green,
-        onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => FloatingPage()));
-        },
-
-        child: Icon(Icons.chat),
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Container(
+            height: size.width * 0.115,
+            width: size.width * 0.11,
+            margin: EdgeInsets.only(bottom: 10),
+            child: FloatingActionButton(
+              onPressed: () {},
+              backgroundColor: Color.fromARGB(255, 24, 46, 49),
+              child: CircleAvatar(
+                radius: 13,
+                backgroundColor: Color.fromARGB(255, 24, 46, 49),
+                backgroundImage: AssetImage('assets/Ai circle.jpg'),
+              ),
+            ),
+          ),
+          FloatingActionButton(
+            backgroundColor: Colors.green,
+            onPressed: () => Get.to(FloatingPage()),
+            child: Icon(Icons.chat),
+          ),
+        ],
       ),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: Text(
           "Whatsapp",
           style: TextStyle(
-              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 25),
+              color: Colors.white, fontWeight: FontWeight.w600, fontSize: 25),
         ),
         backgroundColor: Color(0xff0a131a),
         actions: [
