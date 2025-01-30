@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:whatsapp/Screns/ProfileSettingsPage/profile_open_page.dart';
 import 'package:whatsapp/Screns/ProfileSettingsPage/profilelistview_page.dart';
 
 class ProfileTile extends StatefulWidget {
@@ -17,6 +20,7 @@ class _ProfileTileState extends State<ProfileTile> {
           color: Colors.white12,
         ),
         ListTile(
+          onTap: ()=>Get.to(()=>ProfileOpenPage()),
           leading: CircleAvatar(
             backgroundImage: AssetImage("assets/dhruv image neww one mc d.jpg"),
             radius: 32,
