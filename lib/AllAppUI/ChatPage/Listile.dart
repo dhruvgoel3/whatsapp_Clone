@@ -6,10 +6,21 @@ class Cloning extends StatelessWidget {
 
   const Cloning(this.image,this.label,this.label2,this.iconData,this.time);
 
+
+
   @override
   Widget build(BuildContext context) {
    var size = MediaQuery.of(context).size;
     return ListTile(
+      // onTap: () {
+      //   // Navigate to the chat details screen with the name
+      //   Navigator.push(
+      //     context,
+      //     MaterialPageRoute(
+      //       builder: Cloning[index].routeBuilder,
+      //     ),
+      //   );
+      // },
      leading: CircleAvatar(backgroundImage: AssetImage(image),radius: 25,),
       title: Text(label,style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color: Colors.white),),
       subtitle: Row(

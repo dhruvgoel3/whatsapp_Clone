@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/AllAppUI/ChatPage/Listile.dart';
 class CloningList extends StatefulWidget {
-  const CloningList({super.key});
+  final Widget Function(BuildContext) routeBuilder;
+  const CloningList({super.key,required this.routeBuilder});
 
   @override
   State<CloningList> createState() => _CloningListState();
@@ -12,7 +13,7 @@ class _CloningListState extends State<CloningList> {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        Cloning("assets/dhruv image neww one mc d.jpg", "Me (You)", "Collage work done !!", Icons.check, "05/11/24"),
+        Cloning("assets/dhruv image neww one mc d.jpg", "Me (You)", "Collage work done !!", Icons.check, "05/11/24",),
         Cloning("assets/images (1).jpeg", "Papa ji", "Photo", Icons.check, "1:02 am"),
         Cloning("assets/images (2).png", "Big Brother", "Photo", Icons.check, "12:46 pm"),
         Cloning("assets/images (4).jpeg", "Loveraj", "Photo", Icons.check, "Today"),
