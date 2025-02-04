@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/AllAppUI/ChatPage/Listile.dart';
 class CloningList extends StatefulWidget {
-  final Widget Function(BuildContext) routeBuilder;
-  const CloningList({super.key,required this.routeBuilder});
+  // final Widget Function(BuildContext) routeBuilder;
+  const CloningList({super.key,});
 
   @override
   State<CloningList> createState() => _CloningListState();
 }
 
 class _CloningListState extends State<CloningList> {
+
   @override
   Widget build(BuildContext context) {
     return ListView(

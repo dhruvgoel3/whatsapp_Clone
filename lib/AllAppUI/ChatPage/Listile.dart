@@ -4,7 +4,7 @@ class Cloning extends StatelessWidget {
   final String image,label,label2,time;
   final IconData iconData;
 
-  const Cloning(this.image,this.label,this.label2,this.iconData,this.time);
+  const Cloning(this.image,this.label,this.label2,this.iconData,this.time,);
 
 
 
