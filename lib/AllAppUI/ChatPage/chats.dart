@@ -99,138 +99,140 @@ class _ChatPageState extends State<ChatPage> {
           Popmenubuttonpage(),
         ],
       ),
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        decoration: BoxDecoration(color: Color(0xff0a131a)),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 5),
-              child: GestureDetector(
-                onTap: () {
-                  print("Hello Subscriber");
-                },
-                onLongPress: () {
-                  print("Container is pressed for a long time");
-                },
-                child: Container(
-                  height: size.height * 0.055,
-                  width: size.width * 0.923,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    color: Color(0xff272c30),
-                  ),
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 10),
-                        child: CircleAvatar(
-                          backgroundImage: AssetImage("assets/Ai circle.jpg"),
-                          radius: 16,
+      body: Expanded(
+        child: Container(
+          height: double.infinity,
+          width: double.infinity,
+          decoration: BoxDecoration(color: Color(0xff0a131a)),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 5),
+                child: GestureDetector(
+                  onTap: () {
+                    print("Hello Subscriber");
+                  },
+                  onLongPress: () {
+                    print("Container is pressed for a long time");
+                  },
+                  child: Container(
+                    height: size.height * 0.055,
+                    width: size.width * 0.923,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30),
+                      color: Color(0xff272c30),
+                    ),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 10),
+                          child: CircleAvatar(
+                            backgroundImage: AssetImage("assets/Ai circle.jpg"),
+                            radius: 16,
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Text(
-                        "Ask meta AI or Search",
-                        style: TextStyle(
-                            fontSize: 18,
-                            color: Color(0xff3f4649),
-                            fontWeight: FontWeight.w500),
-                      ),
-                    ],
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Text(
+                          "Ask meta AI or Search",
+                          style: TextStyle(
+                              fontSize: 18,
+                              color: Color(0xff3f4649),
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 18,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 8.0, right: 14),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => ChatPage()));
-                    },
-                    child: Container(
+              SizedBox(
+                height: 18,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0, right: 14),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => ChatPage()));
+                      },
+                      child: Container(
+                        height: size.height * 0.04,
+                        width: size.width * 0.1,
+                        decoration: BoxDecoration(
+                            color: const Color(0xff20292f),
+                            borderRadius: BorderRadius.circular(15)),
+                        child: const Center(
+                            child: Text("All",
+                                style: TextStyle(color: Colors.white38))),
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => RenamePage()));
+                      },
+                      child: Container(
+                        height: size.height * 0.04,
+                        width: size.width * 0.18,
+                        decoration: BoxDecoration(
+                            color: const Color(0xff20292f),
+                            borderRadius: BorderRadius.circular(15)),
+                        child: const Center(
+                            child: Text("Unread",
+                                style: TextStyle(color: Colors.white38))),
+                      ),
+                    ),
+                    Container(
+                      height: size.height * 0.04,
+                      width: size.width * 0.24,
+                      decoration: BoxDecoration(
+                          color: const Color(0xff20292f),
+                          borderRadius: BorderRadius.circular(15)),
+                      child: const Center(
+                          child: Text(
+                        "Favourities",
+                        style: TextStyle(color: Colors.white38),
+                      )),
+                    ),
+                    Container(
+                      height: size.height * 0.04,
+                      width: size.width * 0.17,
+                      decoration: BoxDecoration(
+                          color: const Color(0xff20292f),
+                          borderRadius: BorderRadius.circular(15)),
+                      child: const Center(
+                          child: Text(
+                        "Groups",
+                        style: TextStyle(color: Colors.white38),
+                      )),
+                    ),
+                    Container(
                       height: size.height * 0.04,
                       width: size.width * 0.1,
                       decoration: BoxDecoration(
                           color: const Color(0xff20292f),
                           borderRadius: BorderRadius.circular(15)),
                       child: const Center(
-                          child: Text("All",
-                              style: TextStyle(color: Colors.white38))),
+                          child: Icon(
+                        Icons.add,
+                        color: Colors.white38,
+                      )),
                     ),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => RenamePage()));
-                    },
-                    child: Container(
-                      height: size.height * 0.04,
-                      width: size.width * 0.18,
-                      decoration: BoxDecoration(
-                          color: const Color(0xff20292f),
-                          borderRadius: BorderRadius.circular(15)),
-                      child: const Center(
-                          child: Text("Unread",
-                              style: TextStyle(color: Colors.white38))),
-                    ),
-                  ),
-                  Container(
-                    height: size.height * 0.04,
-                    width: size.width * 0.24,
-                    decoration: BoxDecoration(
-                        color: const Color(0xff20292f),
-                        borderRadius: BorderRadius.circular(15)),
-                    child: const Center(
-                        child: Text(
-                      "Favourities",
-                      style: TextStyle(color: Colors.white38),
-                    )),
-                  ),
-                  Container(
-                    height: size.height * 0.04,
-                    width: size.width * 0.17,
-                    decoration: BoxDecoration(
-                        color: const Color(0xff20292f),
-                        borderRadius: BorderRadius.circular(15)),
-                    child: const Center(
-                        child: Text(
-                      "Groups",
-                      style: TextStyle(color: Colors.white38),
-                    )),
-                  ),
-                  Container(
-                    height: size.height * 0.04,
-                    width: size.width * 0.1,
-                    decoration: BoxDecoration(
-                        color: const Color(0xff20292f),
-                        borderRadius: BorderRadius.circular(15)),
-                    child: const Center(
-                        child: Icon(
-                      Icons.add,
-                      color: Colors.white38,
-                    )),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            SizedBox(
-              height: 14,
-            ),
-            Expanded(child: CloningList()),
-          ],
+              SizedBox(
+                height: 14,
+              ),
+              Expanded(child: CloningList()),
+            ],
+          ),
         ),
       ),
     );
